@@ -48,7 +48,7 @@ class BaseScreen extends StatelessWidget {
                       text: 'البحث و الاستعلام', onTap: () => Get.to(TarmeezBeanatAlBaladea())),
 
                   ClickableText(
-                      text: 'متابعة طلبات الموظفين', onTap: () => Get.to(Mokhalafat())),
+                      text: 'متابعة طلبات الموظفين', onTap: () => Get.to(TarmeezMokhalafat())),
                   ClickableText(
                       text: 'التقارير و الطباعة', onTap: () => Get.to(TasneefAlDowal())),
                   ClickableText(text: 'خروج', onTap: () => Get.to( TarmeezWazeefa())),

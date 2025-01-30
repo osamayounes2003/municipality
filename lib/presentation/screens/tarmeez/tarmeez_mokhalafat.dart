@@ -9,8 +9,8 @@ import 'package:municipality/presentation/wedgits/custom_data_table.dart';
 import '../../../constants/app_colors.dart';
 import '../../wedgits/custom_text_feild.dart';
 
-class Mokhalafat extends StatelessWidget {
-  Mokhalafat({super.key});
+class TarmeezMokhalafat extends StatelessWidget {
+  TarmeezMokhalafat({super.key});
 
   @override
   Widget build(BuildContext context) {
