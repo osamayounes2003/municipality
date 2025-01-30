@@ -24,7 +24,7 @@ final double width ;
         width:width ,
         height:height ,
         margin: const EdgeInsets.all(10),
-        padding:const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(borderRadius),
