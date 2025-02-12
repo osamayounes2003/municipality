@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:municipality/constants/app_colors.dart';
 import 'package:municipality/constants/app_routes.dart';
-import 'package:municipality/presentation/screens/mokafaat_and_taweedat.dart';
 import 'package:municipality/presentation/screens/tarmeez/tarmeez_mokhalafat.dart';
 import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_genseat.dart';
 import 'package:municipality/presentation/screens/tarmeez/tarmeez_wazeefa.dart';
 import 'package:municipality/presentation/screens/tasneef/tasneef_al_dowal.dart';
-import 'package:municipality/presentation/wedgits/clickable_text.dart';
-import 'package:municipality/presentation/wedgits/custom_pop_up_menu_button.dart';
+
+import '../widgets/clickable_text.dart';
+import '../widgets/custom_pop_up_menu_button.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen({super.key, required this.widget});
