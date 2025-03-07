@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:municipality/core/extensions/widget_extension.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
 
 import '../widgets/custom_button.dart';
 import '../widgets/custom_data_table.dart';
 import '../widgets/custom_text_feild.dart';
+
 
 class MokafaatAndTaweedat extends StatelessWidget {
   const MokafaatAndTaweedat({super.key});

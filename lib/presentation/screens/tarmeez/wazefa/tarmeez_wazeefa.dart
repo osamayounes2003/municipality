@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
+import 'package:municipality/presentation/widgets/custom_button.dart';
+import 'package:municipality/presentation/widgets/custom_data_table.dart';
 
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
-
 
 class TarmeezWazeefa extends StatelessWidget {
   TarmeezWazeefa({super.key});
@@ -56,8 +53,8 @@ class TarmeezWazeefa extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "رمز الوظيفة",
-                            customHeight: 30,
-                            customWidth: currentWidth / 5,
+                            customHeight: 40,
+                            customWidth: currentWidth / 4,
                           ),
                         ],
                       ),
@@ -65,8 +62,8 @@ class TarmeezWazeefa extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "اسم الوظيفة",
-                            customHeight: 30,
-                            customWidth: currentWidth / 3,
+                            customHeight: 40,
+                            customWidth: currentWidth / 2,
                           ),
                         ],
                       ),
@@ -76,8 +73,8 @@ class TarmeezWazeefa extends StatelessWidget {
                       CustomButton(
                         text: 'حفظ',
                         onPressed: () => {},
-                        height: 40,
-                        width: 80,
+                        height: 60,
+                        width: 90,
                       ),
                       CustomDataTable(
                         columns: data.isNotEmpty ? data.first.keys.toList() : [],

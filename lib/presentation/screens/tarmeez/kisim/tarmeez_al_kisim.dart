@@ -8,6 +8,7 @@ import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
 
+
 class TarmeezAlKisim extends StatelessWidget {
   const TarmeezAlKisim({super.key});
 
@@ -47,8 +48,8 @@ class TarmeezAlKisim extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "رمز القسم",
-                            customHeight: 30,
-                            customWidth: currentWidth / 5,
+                            customHeight: 40,
+                            customWidth: currentWidth / 4,
                           ),
                         ],
                       ),
@@ -56,8 +57,8 @@ class TarmeezAlKisim extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "اسم القسم",
-                            customHeight: 30,
-                            customWidth: currentWidth / 3,
+                            customHeight: 40,
+                            customWidth: currentWidth / 2,
                           ),
                         ],
                       ),
@@ -67,7 +68,7 @@ class TarmeezAlKisim extends StatelessWidget {
                       CustomButton(
                         text: 'حفظ',
                         onPressed: () => {},
-                        height: 40,
+                        height: 60,
                         width: 80,
                       ),
                       CustomDataTable(

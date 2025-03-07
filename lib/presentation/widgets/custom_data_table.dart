@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/root/parse_route.dart';
-import 'package:municipality/core/constants/custom_styles.dart';
 
 import '../../core/constants/app_colors.dart';
+import '../../core/constants/custom_styles.dart';
 import 'custom_button.dart';
 
 class CustomDataTable extends StatelessWidget {
@@ -14,8 +10,12 @@ class CustomDataTable extends StatelessWidget {
   final List<List<dynamic>> rows;
   final double height;
 
-  CustomDataTable(
-      {required this.columns, required this.rows, required this.height});
+  const CustomDataTable({
+    super.key,
+    required this.columns,
+    required this.rows,
+    required this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class CustomDataTable extends StatelessWidget {
             verticalInside: tableBorderSide(2, AppColors.tableBorderColor),
             horizontalInside: tableBorderSide(2, AppColors.tableBorderColor),
           ),
-          headingRowColor: WidgetStateProperty.all(AppColors.grey),
+          headingRowColor: MaterialStateProperty.all(AppColors.grey),
           columns: columns.map((column) {
             return DataColumn(label: Text(column));
           }).toList(),
@@ -39,16 +39,26 @@ class CustomDataTable extends StatelessWidget {
             return DataRow(
                 onLongPress: () {
                   Get.dialog(AlertDialog(
-                    title: Text(
+                    title: const Text(
                       'data',
                       textAlign: TextAlign.center,
                     ),
-                    actions: [Row(
-                      children: [
-                        CustomButton(text: 'حذف', onPressed: (){}, height: 50, width: 80),
-                        CustomButton(text: 'تعديل', onPressed: (){}, height: 50, width: 80),
-                      ],
-                    )],
+                    actions: [
+                      Row(
+                        children: [
+                          CustomButton(
+                              text: 'حذف',
+                              onPressed: () {},
+                              height: 50,
+                              width: 80),
+                          CustomButton(
+                              text: 'تعديل',
+                              onPressed: () {},
+                              height: 50,
+                              width: 80),
+                        ],
+                      )
+                    ],
                   ));
                 },
                 cells: row.map((cell) {

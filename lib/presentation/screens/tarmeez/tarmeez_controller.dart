@@ -1,5 +1,4 @@
 import 'dart:html' as html;
-
 import 'package:get/get.dart';
 
 class ImagePickerController extends GetxController {

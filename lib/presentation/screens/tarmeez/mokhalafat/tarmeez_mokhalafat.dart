@@ -1,16 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
+import 'package:municipality/presentation/widgets/custom_button.dart';
+import 'package:municipality/presentation/widgets/custom_data_table.dart';
 
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
 
-
 class TarmeezMokhalafat extends StatelessWidget {
-  TarmeezMokhalafat({super.key});
+  const TarmeezMokhalafat({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +49,8 @@ class TarmeezMokhalafat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "رمز المخالفة",
-                    customHeight: 30,
-                    customWidth: currentWidth / 5,
+                    customHeight: 40,
+                    customWidth: currentWidth / 4,
                   ),
                 ],
               ),
@@ -61,8 +58,8 @@ class TarmeezMokhalafat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "اسم المخالفة",
-                    customHeight: 30,
-                    customWidth: currentWidth / 3,
+                    customHeight: 40,
+                    customWidth: currentWidth / 2,
                   ),
                 ],
               ),
@@ -72,8 +69,8 @@ class TarmeezMokhalafat extends StatelessWidget {
               CustomButton(
                 text: 'حفظ',
                 onPressed: () => {},
-                height: 40,
-                width: 80,
+                height: 60,
+                width: 90,
               ),
               CustomDataTable(
                 columns: data.isNotEmpty ? data.first.keys.toList() : [],

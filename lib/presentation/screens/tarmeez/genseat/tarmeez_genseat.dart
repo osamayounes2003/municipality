@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
+import 'package:municipality/presentation/widgets/custom_button.dart';
 
-import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
-
 
 class TarmeezGenseat extends StatelessWidget {
   const TarmeezGenseat({super.key});
@@ -38,8 +35,8 @@ class TarmeezGenseat extends StatelessWidget {
         body: BaseScreen(
             widget: Center(
       child: ListView(shrinkWrap: true, children: [
-        SizedBox(
-       
+        Container(
+          padding: const EdgeInsets.all(5),
           width: currentWidth,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -48,8 +45,8 @@ class TarmeezGenseat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "رمز الجنسية",
-                    customHeight: 30,
-                    customWidth: currentWidth / 5,
+                    customHeight: 40,
+                    customWidth: currentWidth / 4,
                   ),
                 ],
               ),
@@ -57,8 +54,8 @@ class TarmeezGenseat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "اسم الجنسية",
-                    customHeight: 30,
-                    customWidth: currentWidth / 3,
+                    customHeight: 40,
+                    customWidth: currentWidth / 2,
                   ),
                 ],
               ),
@@ -68,7 +65,7 @@ class TarmeezGenseat extends StatelessWidget {
               CustomButton(
                 text: 'حفظ',
                 onPressed: () => {},
-                height: 40,
+                height: 60,
                 width: 80,
               ),
               CustomDataTable(
@@ -78,7 +75,7 @@ class TarmeezGenseat extends StatelessWidget {
               ),
             ],
           ),
-        ).paddingAll(5)
+        ),
       ]),
     )));
   }
