@@ -23,8 +23,8 @@ final double width ;
     return  Container(
         width:width ,
         height:height ,
-        margin: const EdgeInsets.all(10),
-        padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+margin: const EdgeInsets.all(10),
+        padding:const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(borderRadius),
@@ -37,13 +37,15 @@ final double width ;
             ),
           ],
         ),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        child: Center(
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: textColor,
+              fontSize: height/4,
+
+            ),
           ),
         ),
     ).onTap(onPressed);

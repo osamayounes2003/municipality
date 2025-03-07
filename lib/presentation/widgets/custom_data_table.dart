@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:get/get_common/get_reset.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/parse_route.dart';
-import 'package:municipality/constants/custom_styles.dart';
-import 'package:municipality/presentation/wedgits/custom_button.dart';
+import 'package:municipality/core/constants/custom_styles.dart';
 
-import '../../constants/app_colors.dart';
+import '../../core/constants/app_colors.dart';
+import 'custom_button.dart';
 
 class CustomDataTable extends StatelessWidget {
   final List<String> columns;

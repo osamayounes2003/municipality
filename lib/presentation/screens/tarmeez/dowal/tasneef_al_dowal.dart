@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/wedgits/custom_button.dart';
 
-import '../../../constants/app_colors.dart';
-import '../../wedgits/custom_data_table.dart';
-import '../../wedgits/custom_text_feild.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_data_table.dart';
+import '../../../widgets/custom_text_feild.dart';
+
 
 
 class TasneefAlDowal extends StatelessWidget {
@@ -70,8 +70,8 @@ class TasneefAlDowal extends StatelessWidget {
 
                               CustomTextField(
                                 label: "رمز التصنيف",
-                                customHeight: 40,
-                                customWidth: currentWidth / 3,
+                                customHeight: 30,
+                                customWidth: currentWidth / 4,
                               ),
                             ],
                           ),
@@ -81,8 +81,8 @@ class TasneefAlDowal extends StatelessWidget {
 
                               CustomTextField(
                                 label: "اسم الدولة",
-                                customHeight: 40,
-                                customWidth: currentWidth / 2,
+                                customHeight: 30,
+                                customWidth: currentWidth / 3,
                               ),
                             ],
                           ),
@@ -90,8 +90,8 @@ class TasneefAlDowal extends StatelessWidget {
                             children: [
                               CustomTextField(
                                 label:  'الفئة',
-                                customHeight: 40,
-                                customWidth: currentWidth / 2,
+                                customHeight: 30,
+                                customWidth: currentWidth / 3,
                               ),
                             ],
                           ),
@@ -101,7 +101,7 @@ class TasneefAlDowal extends StatelessWidget {
                           CustomButton(
                             text: 'حفظ',
                             onPressed: () => {},
-                            height: 60,
+                            height: 40,
                             width: 80,
                           ),
                           CustomDataTable(

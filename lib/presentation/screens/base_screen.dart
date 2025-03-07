@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:municipality/constants/app_colors.dart';
-import 'package:municipality/constants/app_routes.dart';
-import 'package:municipality/presentation/screens/mokafaat_and_taweedat.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_mokhalafat.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_genseat.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_wazeefa.dart';
-import 'package:municipality/presentation/screens/tasneef/tasneef_al_dowal.dart';
-import 'package:municipality/presentation/wedgits/clickable_text.dart';
-import 'package:municipality/presentation/wedgits/custom_pop_up_menu_button.dart';
+import 'package:municipality/core/constants/app_colors.dart';
+import 'package:municipality/core/constants/app_routes.dart';
+import 'package:municipality/presentation/screens/tarmeez/mokhalafat/tarmeez_mokhalafat.dart';
+import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea/view/tarmeez_beanat_al_baladea.dart';
+import 'package:municipality/presentation/screens/tarmeez/wazefa/tarmeez_wazeefa.dart';
+import 'package:municipality/presentation/screens/tarmeez/dowal/tasneef_al_dowal.dart';
 
-class BaseScreen extends StatelessWidget {
-  const BaseScreen({super.key, required this.widget});
+
+import '../widgets/clickable_text.dart';
+import '../widgets/custom_pop_up_menu_button.dart';
+
+class BaseScreen extends GetResponsiveView {
+  BaseScreen({super.key, required this.widget});
 
   final Widget widget;
 
@@ -35,14 +35,7 @@ class BaseScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Tooltip(
-                    message: 'بببببببب',
-                    child: ClickableText(
-                      text: 'التجهيز و الإعداد',
-                      onTap: () {},
-                    ),
-                  ),
-                  // Add spacing between items
+
                   CustomPopupMenuButton(
                       buttonText: 'الموظفين و العاملين',
                       items: const [
@@ -50,26 +43,15 @@ class BaseScreen extends StatelessWidget {
                           value: AppRoutes.mokafaatAndTaweedat,
                           child: Text('المكافآت و التعويضات'),
                         ),
-                        PopupMenuItem(
-                          value: AppRoutes.sollamDaragatAlAamal,
-                          child: Text('سلم درجات عمال'),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.sollamDaragatAlAamal,
-                          child: Text('تصنيف الدول'),
-                        ),
+
                       ],
                       onSelected: (page) {
                         switch (page) {
                           case AppRoutes.mokafaatAndTaweedat:
                             Get.toNamed(AppRoutes.mokafaatAndTaweedat);
                             break;
-                          case AppRoutes.sollamDaragatAlAamal:
-                            Get.toNamed(AppRoutes.sollamDaragatAlAamal);
-                            break;
-                          case AppRoutes.tasneefAlDowal :
-                            Get.toNamed(AppRoutes.tasneefAlDowal);
-                            break;
+
+
                         }
                       }),
 
@@ -93,9 +75,19 @@ class BaseScreen extends StatelessWidget {
                           child: Text('ترميز الوظيفة'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezWazeefa,
+                          value: AppRoutes.tarmeezAlKisim,
                           child: Text('ترميز القسم'),
                         ),
+                        PopupMenuItem(
+                          value: AppRoutes.sollamDaragatAlAamal,
+                          child: Text('سلم درجات العمال'),
+                        ),
+
+                        PopupMenuItem(
+                          value: AppRoutes.tasneefAlDowal,
+                          child: Text('تصنيف الدول'),
+                        ),
+
                       ],
                       onSelected: (page) {
                         switch (page) {
@@ -105,15 +97,22 @@ class BaseScreen extends StatelessWidget {
                           case AppRoutes.tarmeezMokhalafat:
                             Get.toNamed(AppRoutes.tarmeezMokhalafat);
                             break;
+                          case AppRoutes.tasneefAlDowal:
+                            Get.toNamed(AppRoutes.tasneefAlDowal);
+                            break;
+                          case AppRoutes.sollamDaragatAlAamal:
+                            Get.toNamed(AppRoutes.sollamDaragatAlAamal);
+                            break;
                           case AppRoutes.tarmeezGenseat:
                             Get.toNamed(AppRoutes.tarmeezGenseat);
-                            break;
-                          case AppRoutes.tarmeezBeanatAlBaladea:
-                            Get.toNamed(AppRoutes.tarmeezBeanatAlBaladea);
                             break;
                           case AppRoutes.tarmeezAlKisim:
                             Get.toNamed(AppRoutes.tarmeezAlKisim);
                             break;
+                          case AppRoutes.tarmeezBeanatAlBaladea:
+                            Get.toNamed(AppRoutes.tarmeezBeanatAlBaladea);
+                            break;
+
                         }
                       }),
                   ClickableText(
@@ -125,8 +124,28 @@ class BaseScreen extends StatelessWidget {
                   ClickableText(
                       text: 'التقارير و الطباعة',
                       onTap: () => Get.to(const TasneefAlDowal())),
-                  ClickableText(
-                      text: 'خروج', onTap: () => Get.to(TarmeezWazeefa())),
+                  CustomPopupMenuButton(
+                      buttonText: 'خروج',
+                      items: [
+                        PopupMenuItem(
+                          child: Text('تفويض'),
+                          value: AppRoutes.tafweed,
+                        ),
+                        PopupMenuItem(
+                          child: Text('بيانات الوظائف الأساسية'),
+                          value: AppRoutes.beanatWazaefAsasea,
+                        )
+                      ],
+                      onSelected: (page) {
+                        switch (page) {
+                          case AppRoutes.tafweed:
+                            Get.toNamed(AppRoutes.tafweed);
+                            break;
+                          case AppRoutes.beanatWazaefAsasea:
+                            Get.toNamed(AppRoutes.beanatWazaefAsasea);
+                            break;
+                        }
+                      })
                 ],
               ),
             ),
