@@ -20,8 +20,8 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
     final BeanatAlBaladeaController controller =
         Get.put(BeanatAlBaladeaController());
 
-    late HijriPicker picker1 = HijriPicker(controller.hijriController1);
-    late HijriPicker picker2 = HijriPicker(controller.hijriController2);
+    late HijriPicker picker1 = HijriPicker(controller.tareekhBedaeaIterarea);
+    late HijriPicker picker2 = HijriPicker(controller.tareekhNehaeaIterarea);
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     return BaseScreen(
@@ -37,64 +37,64 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                     children: [
                       CustomTextField(
                           label: 'اسم البلدية',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم رئيس البلدية',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم نائب رئيس البلدية',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                     ],
                   ).scrollDirection(Axis.horizontal),
                   Row(
                     children: [
                       CustomTextField(
                           label: 'مدير إدارة الشؤون المالية والإدارية ',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم مدير قسم شؤون الوظفين',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم المدقق',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                     ],
                   ).scrollDirection(Axis.horizontal),
                   Row(
                     children: [
                       CustomTextField(
                           label: 'اسم مدير الشؤون المالية',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم الموظف المختص',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'اسم الموظف المختص المساعد',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                     ],
                   ).scrollDirection(Axis.horizontal),
                   Row(
                     children: [
                       CustomTextField(
                           label: 'نسبة بدل غلاء المعيشة',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'رئيس قسم الحركة والصيانة',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                       CustomTextField(
                           label: 'IPAN البلدية',
-                          customHeight: currentHeight / 17,
-                          customWidth: currentWidth / 3.5),
+                          customHeight: currentHeight / 20,
+                          customWidth: currentWidth / 5),
                     ],
                   ).scrollDirection(Axis.horizontal),
                 ],
@@ -108,33 +108,34 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                   CustomButton(
                       text: "ضبط التواريخ",
                       onPressed: () {},
-                      height: currentHeight / 12,
-                      width: currentWidth / 7),
+                      height: currentHeight / 15,
+                      width: currentWidth / 10),
                   CustomButton(
                       text: "العلاوات السنوية",
                       onPressed: () {},
-                      height: currentHeight / 12,
-                      width: currentWidth / 7),
+                      height: currentHeight / 15,
+                      width: currentWidth / 10),
                   CustomButton(
                       text: "تعديل ",
                       onPressed: () {},
-                      height: currentHeight / 12,
-                      width: currentWidth / 7),
+                      height: currentHeight / 15,
+                      width: currentWidth / 10),
                 ],
               ).scrollDirection(Axis.vertical),
               Spacer(
                 flex: 2,
               ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomButton(
                       text: 'حفظ',
                       onPressed: () {
-                        print(controller.hijriController1.text);
+                        print(controller.tareekhBedaeaIterarea.text);
                         print(controller.municipalitySymbol.value);
                       },
-                      height: currentHeight / 13,
-                      width: currentWidth / 12),
+                      height: currentHeight / 15,
+                      width: currentWidth / 15),
                 ],
               ),
               Spacer(
@@ -149,12 +150,15 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                       children: [
                         CustomTextField(
                           label: 'تاريخ بداية الاضرارية',
-                          controller: controller.hijriController1,
+                          controller: controller.tareekhBedaeaIterarea,
                           customHeight: 25,
                           customWidth: 200,
                           suffixIcon: IconButton(
                             onPressed: () => picker1.pickHijriDate(context),
-                            icon: const Icon(Icons.calendar_today),
+                            icon: const Icon(
+                              Icons.calendar_today,
+                              size: 15,
+                            ),
                           ),
                         )
                       ],
@@ -166,12 +170,15 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                       children: [
                         CustomTextField(
                           label: 'تاريخ نهاية الاضرارية',
-                          controller: controller.hijriController2,
+                          controller: controller.tareekhNehaeaIterarea,
                           customHeight: 25,
                           customWidth: 200,
                           suffixIcon: IconButton(
                             onPressed: () => picker2.pickHijriDate(context),
-                            icon: const Icon(Icons.calendar_today),
+                            icon: const Icon(
+                              Icons.calendar_today,
+                              size: 15,
+                            ),
                           ),
                         )
                       ],
