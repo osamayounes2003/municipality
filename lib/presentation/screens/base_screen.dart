@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/tarmeez/dowal/tasneef_al_dowal.dart';
 import 'package:municipality/presentation/screens/tarmeez/mokhalafat/tarmeez_mokhalafat.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea.dart';
+import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea/view/tarmeez_beanat_al_baladea.dart';
 import 'package:municipality/presentation/screens/tarmeez/wazefa/tarmeez_wazeefa.dart';
 
 import '../../core/constants/app_colors.dart';
@@ -50,26 +50,16 @@ class BaseScreen extends StatelessWidget {
                           value: AppRoutes.mokafaatAndTaweedat,
                           child: Text('المكافآت و التعويضات'),
                         ),
-                        PopupMenuItem(
-                          value: AppRoutes.sollamDaragatAlAamal,
-                          child: Text('سلم درجات عمال'),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.sollamDaragatAlAamal,
-                          child: Text('تصنيف الدول'),
-                        ),
+
+
                       ],
                       onSelected: (page) {
                         switch (page) {
                           case AppRoutes.mokafaatAndTaweedat:
                             Get.toNamed(AppRoutes.mokafaatAndTaweedat);
                             break;
-                          case AppRoutes.sollamDaragatAlAamal:
-                            Get.toNamed(AppRoutes.sollamDaragatAlAamal);
-                            break;
-                          case AppRoutes.tasneefAlDowal :
-                            Get.toNamed(AppRoutes.tasneefAlDowal);
-                            break;
+
+
                         }
                       }),
 
@@ -93,8 +83,17 @@ class BaseScreen extends StatelessWidget {
                           child: Text('ترميز الوظيفة'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezWazeefa,
+                          value: AppRoutes.tarmeezAlKisim,
                           child: Text('ترميز القسم'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.tasneefAlDowal,
+                          child: Text('  تصنيف الدول حسب فئات البدل'),
+
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.sollamDaragatAlAamal,
+                          child: Text('سلم درجات عمال'),
                         ),
                       ],
                       onSelected: (page) {
@@ -110,6 +109,12 @@ class BaseScreen extends StatelessWidget {
                             break;
                           case AppRoutes.tarmeezBeanatAlBaladea:
                             Get.toNamed(AppRoutes.tarmeezBeanatAlBaladea);
+                            break;
+                          case AppRoutes.tasneefAlDowal :
+                            Get.toNamed(AppRoutes.tasneefAlDowal);
+                            break;
+                          case AppRoutes.sollamDaragatAlAamal:
+                            Get.toNamed(AppRoutes.sollamDaragatAlAamal);
                             break;
                           case AppRoutes.tarmeezAlKisim:
                             Get.toNamed(AppRoutes.tarmeezAlKisim);

@@ -45,8 +45,8 @@ class TarmeezGenseat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "رمز الجنسية",
-                    customHeight: 40,
-                    customWidth: currentWidth / 4,
+                    customHeight: 30,
+                    customWidth: currentWidth / 5,
                   ),
                 ],
               ),
@@ -54,8 +54,8 @@ class TarmeezGenseat extends StatelessWidget {
                 children: [
                   CustomTextField(
                     label: "اسم الجنسية",
-                    customHeight: 40,
-                    customWidth: currentWidth / 2,
+                    customHeight: 30,
+                    customWidth: currentWidth / 3,
                   ),
                 ],
               ),
@@ -65,7 +65,7 @@ class TarmeezGenseat extends StatelessWidget {
               CustomButton(
                 text: 'حفظ',
                 onPressed: () => {},
-                height: 60,
+                height: 40,
                 width: 80,
               ),
               CustomDataTable(

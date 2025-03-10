@@ -48,8 +48,8 @@ class TarmeezAlKisim extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "رمز القسم",
-                            customHeight: 40,
-                            customWidth: currentWidth / 4,
+                            customHeight: 30,
+                            customWidth: currentWidth / 5,
                           ),
                         ],
                       ),
@@ -57,8 +57,8 @@ class TarmeezAlKisim extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "اسم القسم",
-                            customHeight: 40,
-                            customWidth: currentWidth / 2,
+                            customHeight: 30,
+                            customWidth: currentWidth / 3,
                           ),
                         ],
                       ),
@@ -68,7 +68,7 @@ class TarmeezAlKisim extends StatelessWidget {
                       CustomButton(
                         text: 'حفظ',
                         onPressed: () => {},
-                        height: 60,
+                        height: 40,
                         width: 80,
                       ),
                       CustomDataTable(

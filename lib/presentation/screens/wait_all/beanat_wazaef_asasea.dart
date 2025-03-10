@@ -8,7 +8,7 @@ import 'package:municipality/presentation/screens/base_screen.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_feild.dart';
-import '../tarmeez/tarmeez_controller.dart';
+
 
 
 class BeanatWazaefAsasea extends StatelessWidget {
@@ -16,7 +16,7 @@ class BeanatWazaefAsasea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ImagePickerController controller = Get.put(ImagePickerController());
+
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     return BaseScreen(
@@ -321,50 +321,50 @@ class BeanatWazaefAsasea extends StatelessWidget {
                         border: Border.all(color: AppColors.black)),
                     child: Column(
                       children: [
-                        Text('موظف جديد '),
-                        Container(
-                          width: 150,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: AppColors.grey),
-                            image: controller.imageUrl.value.isNotEmpty
-                                ? DecorationImage(
-                                    image:
-                                        NetworkImage(controller.imageUrl.value),
-                                    fit: BoxFit.cover,
-                                  )
-                                : null,
-                          ),
-                          child: controller.imageUrl.value.isEmpty
-                              ? const Center(child: Text('إضافة صورة'))
-                              : null,
-                        ),
-                        CustomButton(text: 'طباعة كارت تعريفي', onPressed: (){}, height: 40, width: 100),
-
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    CustomTextField(label: 'جهة خطاب التعريف', customHeight: 25, customWidth: 100),
-                                                            Checkbox(value: false, onChanged: (p){}),
-                                  ],
-                                ) ,
-                                Column(
-                                  children: [
-                                    CustomButton(text: 'مشهد بالراتب', onPressed: (){}, height: 25, width: 50),
-                                                            CustomButton(text: 'شهادة تعريف', onPressed: (){}, height: 25, width: 50),
-                                  ],
-                                ),
-                              ],
-                            ),
-
-
-
-                        CustomButton(text: 'بيان خدمات موظف', onPressed: (){}, height: 40, width: 150),
-                        CustomButton(text: 'طباعة مكافئة عن الاجازات', onPressed: (){}, height: 40, width: 150),
-                        Text('تاريخ طي القيد..........................'),
-                        CustomButton(text: 'طباعة قرار طي القيد ', onPressed: (){}, height: 40, width: 150),
+                        // Text('موظف جديد '),
+                        // Container(
+                        //   width: 150,
+                        //   height: 150,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(10),
+                        //     border: Border.all(color: AppColors.grey),
+                        //     image: controller.imageUrl.value.isNotEmpty
+                        //         ? DecorationImage(
+                        //             image:
+                        //                 NetworkImage(controller.imageUrl.value),
+                        //             fit: BoxFit.cover,
+                        //           )
+                        //         : null,
+                        //   ),
+                        //   child: controller.imageUrl.value.isEmpty
+                        //       ? const Center(child: Text('إضافة صورة'))
+                        //       : null,
+                        // ),
+                        // CustomButton(text: 'طباعة كارت تعريفي', onPressed: (){}, height: 40, width: 100),
+                        //
+                        //     Row(
+                        //       children: [
+                        //         Column(
+                        //           children: [
+                        //             CustomTextField(label: 'جهة خطاب التعريف', customHeight: 25, customWidth: 100),
+                        //                                     Checkbox(value: false, onChanged: (p){}),
+                        //           ],
+                        //         ) ,
+                        //         Column(
+                        //           children: [
+                        //             CustomButton(text: 'مشهد بالراتب', onPressed: (){}, height: 25, width: 50),
+                        //                                     CustomButton(text: 'شهادة تعريف', onPressed: (){}, height: 25, width: 50),
+                        //           ],
+                        // //         ),
+                        //       ],
+                        //     ),
+                        //
+                        //
+                        //
+                        // CustomButton(text: 'بيان خدمات موظف', onPressed: (){}, height: 40, width: 150),
+                        // CustomButton(text: 'طباعة مكافئة عن الاجازات', onPressed: (){}, height: 40, width: 150),
+                        // Text('تاريخ طي القيد..........................'),
+                        // CustomButton(text: 'طباعة قرار طي القيد ', onPressed: (){}, height: 40, width: 150),
 
                       ],
                     ),

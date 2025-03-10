@@ -38,11 +38,11 @@ class CustomTextField extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          Container(
             width: customWidth,
             height: customHeight,
             child: TextField(
-              controller: controller, // Bind the controller here
+              controller: controller,
               maxLines: null,
               style: const TextStyle(fontSize: 10, color: AppColors.black),
               obscureText: obscureText,
@@ -50,7 +50,7 @@ class CustomTextField extends StatelessWidget {
                 suffixIcon: suffixIcon,
                 hintText: hint,
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.all(5),
+                contentPadding: const EdgeInsets.all(5),
                 focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blue, width: 2.0),
                 ),

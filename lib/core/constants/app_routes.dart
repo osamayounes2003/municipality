@@ -1,5 +1,5 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:municipality/presentation/screens/tarmeez/sollam_daragat_al_aamal.dart';
+import 'package:municipality/presentation/screens/tarmeez/al_amal/sollam_daragat_al_aamal.dart';
 import 'package:municipality/presentation/screens/tarmeez/dowal/tasneef_al_dowal.dart';
 import 'package:municipality/presentation/screens/wait_all/beanat_wazaef_asasea.dart';
 import 'package:municipality/presentation/screens/wait_all/tafweed.dart';

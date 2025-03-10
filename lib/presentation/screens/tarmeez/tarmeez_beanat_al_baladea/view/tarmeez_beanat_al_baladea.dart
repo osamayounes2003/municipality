@@ -6,7 +6,6 @@ import 'package:municipality/core/constants/app_colors.dart';
 import 'package:municipality/core/extensions/widget_extension.dart';
 import 'package:municipality/core/functions/image_picker.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_controller.dart';
 
 import '../../../../../core/functions/hijri_picker.dart';
 import '../../../../widgets/custom_button.dart';

@@ -53,8 +53,8 @@ class TarmeezWazeefa extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "رمز الوظيفة",
-                            customHeight: 40,
-                            customWidth: currentWidth / 4,
+                            customHeight: 30,
+                            customWidth: currentWidth / 5,
                           ),
                         ],
                       ),
@@ -62,8 +62,8 @@ class TarmeezWazeefa extends StatelessWidget {
                         children: [
                           CustomTextField(
                             label: "اسم الوظيفة",
-                            customHeight: 40,
-                            customWidth: currentWidth / 2,
+                            customHeight: 30,
+                            customWidth: currentWidth / 3,
                           ),
                         ],
                       ),
@@ -73,8 +73,8 @@ class TarmeezWazeefa extends StatelessWidget {
                       CustomButton(
                         text: 'حفظ',
                         onPressed: () => {},
-                        height: 60,
-                        width: 90,
+                        height: 40,
+                        width: 80,
                       ),
                       CustomDataTable(
                         columns: data.isNotEmpty ? data.first.keys.toList() : [],
