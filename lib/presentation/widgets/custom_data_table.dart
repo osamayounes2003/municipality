@@ -24,7 +24,6 @@ class CustomDataTable extends StatelessWidget {
         return AlertDialog(
           title: const Text('تحديث البيانات'),
           content: Column(
-            mainAxisSize: MainAxisSize.min,
             children: List.generate(
               rowData.length,
               (index) {
@@ -67,52 +66,56 @@ class CustomDataTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: double.infinity,
       height: height,
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          DataTable(
-            border: TableBorder(
-              top: tableBorderSide(2, AppColors.black),
-              left: tableBorderSide(2, AppColors.black),
-              right: tableBorderSide(2, AppColors.black),
-              bottom: tableBorderSide(2, AppColors.black),
-              verticalInside: tableBorderSide(2, AppColors.tableBorderColor),
-              horizontalInside: tableBorderSide(2, AppColors.tableBorderColor),
-            ),
-            headingRowColor: MaterialStateProperty.all(AppColors.grey),
-            columns: [
-              ...columns.map((column) => DataColumn(label: Text(column))),
-              const DataColumn(label: Text('Actions')),
-            ],
-            rows: rows.map((row) {
-              return DataRow(
-                cells: [
-                  ...row.map((cell) => DataCell(Text(cell.toString()))),
-                  DataCell(
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.edit),
-                          onPressed: () {
-                            showEditDialog(context, row);
-                          },
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.delete),
-                          onPressed: () {
-                            // Handle delete action
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              );
-            }).toList(),
+      child: ListView(children: [
+        DataTable(
+          border: TableBorder(
+            top: tableBorderSide(2, AppColors.black),
+            left: tableBorderSide(2, AppColors.black),
+            right: tableBorderSide(2, AppColors.black),
+            bottom: tableBorderSide(2, AppColors.black),
+            verticalInside: tableBorderSide(2, AppColors.tableBorderColor),
+            horizontalInside: tableBorderSide(2, AppColors.tableBorderColor),
           ),
-        ],
-      ),
+          headingRowColor: MaterialStateProperty.all(AppColors.grey),
+          columns: [
+            ...columns.map(
+              (column) => DataColumn(
+                label: Expanded(child: Text(column)),
+              ),
+            ),
+            const DataColumn(label: Text('Actions')),
+          ],
+          rows: rows.map((row) {
+            return DataRow(
+              cells: [
+                ...row.map((cell) => DataCell(onTap: () {
+                      print('object');
+                    }, Text(cell.toString()))),
+                DataCell(
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.edit),
+                        onPressed: () {
+                          showEditDialog(context, row);
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.delete),
+                        onPressed: () {
+                          // Handle delete action
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }).toList(),
+        ),
+      ]),
     );
   }
 }

@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/core/constants/app_colors.dart';
 import 'package:municipality/core/extensions/widget_extension.dart';
-import 'package:municipality/core/functions/image_picker.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-
 import '../../../../../core/functions/hijri_picker.dart';
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text_feild.dart';
@@ -36,14 +32,17 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                   Row(
                     children: [
                       CustomTextField(
+                          controller: controller.municipality,
                           label: 'اسم البلدية',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.mayor,
                           label: 'اسم رئيس البلدية',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.deputyMayor,
                           label: 'اسم نائب رئيس البلدية',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
@@ -52,14 +51,17 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                   Row(
                     children: [
                       CustomTextField(
+                          controller: controller.modeerIdaraShoonMaliaIdarea,
                           label: 'مدير إدارة الشؤون المالية والإدارية ',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.modeerShoonMawadafeen,
                           label: 'اسم مدير قسم شؤون الوظفين',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.modakek,
                           label: 'اسم المدقق',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
@@ -68,14 +70,17 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                   Row(
                     children: [
                       CustomTextField(
+                          controller: controller.modeerShoonMalia,
                           label: 'اسم مدير الشؤون المالية',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.mowazafMokhtas,
                           label: 'اسم الموظف المختص',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.mowazafMokhtasMosaed,
                           label: 'اسم الموظف المختص المساعد',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
@@ -84,14 +89,17 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                   Row(
                     children: [
                       CustomTextField(
+                          controller: controller.badalGhalaaMaeshaa,
                           label: 'نسبة بدل غلاء المعيشة',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.kisimHarakaSeana,
                           label: 'رئيس قسم الحركة والصيانة',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
                       CustomTextField(
+                          controller: controller.baladeaIPAN,
                           label: 'IPAN البلدية',
                           customHeight: currentHeight / 20,
                           customWidth: currentWidth / 5),
@@ -100,119 +108,131 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                 ],
               ),
             ],
-          ),
+          ).scrollDirection(Axis.horizontal),
           Row(
             children: [
-              Column(
-                children: [
-                  CustomButton(
-                      text: "ضبط التواريخ",
-                      onPressed: () {},
-                      height: currentHeight / 15,
-                      width: currentWidth / 10),
-                  CustomButton(
-                      text: "العلاوات السنوية",
-                      onPressed: () {},
-                      height: currentHeight / 15,
-                      width: currentWidth / 10),
-                  CustomButton(
-                      text: "تعديل ",
-                      onPressed: () {},
-                      height: currentHeight / 15,
-                      width: currentWidth / 10),
-                ],
-              ).scrollDirection(Axis.vertical),
-              Spacer(
+              Expanded(
                 flex: 2,
+                child: Column(
+                  children: [
+                    CustomButton(
+                        text: "ضبط التواريخ",
+                        onPressed: () {
+                          print(controller.kisimHarakaSeana.text);
+                        },
+                        height: currentHeight / 15,
+                        width: currentWidth / 10),
+                    CustomButton(
+                        text: "العلاوات السنوية",
+                        onPressed: () {},
+                        height: currentHeight / 15,
+                        width: currentWidth / 10),
+                    CustomButton(
+                        text: "تعديل ",
+                        onPressed: () {},
+                        height: currentHeight / 15,
+                        width: currentWidth / 10),
+                  ],
+                ).scrollDirection(Axis.vertical),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  CustomButton(
-                      text: 'حفظ',
-                      onPressed: () {
-                        print(controller.tareekhBedaeaIterarea.text);
-                        print(controller.municipalitySymbol.value);
-                      },
-                      height: currentHeight / 15,
-                      width: currentWidth / 15),
-                ],
+              Expanded(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    CustomButton(
+                        text: 'حفظ',
+                        onPressed: () {
+                          print(controller.tareekhBedaeaIterarea.text);
+                          print(controller.municipalitySymbol.value);
+                        },
+                        height: currentHeight / 15,
+                        width: currentWidth / 15),
+                  ],
+                ),
               ),
-              Spacer(
+              Expanded(
                 flex: 2,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  SizedBox(
-                    height: currentHeight / 11,
-                    child: Row(
-                      children: [
-                        CustomTextField(
-                          label: 'تاريخ بداية الاضرارية',
-                          controller: controller.tareekhBedaeaIterarea,
-                          customHeight: 25,
-                          customWidth: 200,
-                          suffixIcon: IconButton(
-                            onPressed: () => picker1.pickHijriDate(context),
-                            icon: const Icon(
-                              Icons.calendar_today,
-                              size: 15,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: currentHeight / 11,
-                    child: Row(
-                      children: [
-                        CustomTextField(
-                          label: 'تاريخ نهاية الاضرارية',
-                          controller: controller.tareekhNehaeaIterarea,
-                          customHeight: 25,
-                          customWidth: 200,
-                          suffixIcon: IconButton(
-                            onPressed: () => picker2.pickHijriDate(context),
-                            icon: const Icon(
-                              Icons.calendar_today,
-                              size: 15,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('شعار البلدية '),
-                  Obx(() {
-                    return Container(
-                      width: 200,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: AppColors.grey,
-                        borderRadius: BorderRadius.circular(10),
-                        image: controller.municipalitySymbol.value.isNotEmpty
-                            ? DecorationImage(
-                                image: NetworkImage(
-                                    controller.municipalitySymbol.value),
-                                fit: BoxFit.fill,
-                              )
-                            : null,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      constraints: BoxConstraints(
+                        maxHeight: currentHeight / 11,
                       ),
-                      child: controller.municipalitySymbol.value.isEmpty
-                          ? const Icon(Icons.add_a_photo,
-                              size: 50, color: Colors.white)
-                          : null,
-                    );
-                  }).onTap(controller.pickImage).paddingAll(15)
-                ],
-              )
+                      child: Row(
+                        children: [
+                          CustomTextField(
+                            label: 'تاريخ بداية الاضرارية',
+                            controller: controller.tareekhBedaeaIterarea,
+                            customHeight: 25,
+                            customWidth: 200,
+                            suffixIcon: IconButton(
+                              onPressed: () => picker1.pickHijriDate(context),
+                              icon: const Icon(
+                                Icons.calendar_today,
+                                size: 15,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      constraints: BoxConstraints(
+                        maxHeight: currentHeight / 11,
+                      ),
+                      child: Row(
+                        children: [
+                          CustomTextField(
+                            label: 'تاريخ نهاية الاضرارية',
+                            controller: controller.tareekhNehaeaIterarea,
+                            customHeight: 25,
+                            customWidth: 200,
+                            suffixIcon: IconButton(
+                              onPressed: () => picker2.pickHijriDate(context),
+                              icon: const Icon(
+                                Icons.calendar_today,
+                                size: 15,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ).scrollDirection(Axis.horizontal),
+              ),
+              Expanded(
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('شعار البلدية '),
+                    Obx(() {
+                      return Container(
+                        width: currentHeight * 0.2,
+                        height: currentHeight * 0.2,
+                        decoration: BoxDecoration(
+                          color: AppColors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                          image: controller.municipalitySymbol.value.isNotEmpty
+                              ? DecorationImage(
+                                  image: NetworkImage(
+                                      controller.municipalitySymbol.value),
+                                  fit: BoxFit.fill,
+                                )
+                              : null,
+                        ),
+                        child: controller.municipalitySymbol.value.isEmpty
+                            ? const Icon(Icons.add_a_photo,
+                                size: 50, color: Colors.white)
+                            : null,
+                      );
+                    }).onTap(controller.pickImage).paddingAll(15)
+                  ],
+                ).scrollDirection(Axis.vertical),
+              ),
             ],
           ).scrollDirection(Axis.vertical),
         ],

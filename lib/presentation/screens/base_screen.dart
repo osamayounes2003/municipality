@@ -26,7 +26,8 @@ class BaseScreen extends StatelessWidget {
       shrinkWrap: true,
       children: [
         Container(
-          width: currentWidth,
+          constraints:
+              BoxConstraints(maxWidth: currentWidth, maxHeight: currentHeight),
           color: AppColors.blueAccent,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -35,32 +36,17 @@ class BaseScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Tooltip(
-                    message: 'بببببببب',
-                    child: ClickableText(
-                      text: 'التجهيز و الإعداد',
-                      onTap: () {},
-                    ),
+                  ClickableText(
+                    text: 'التجهيز و الإعداد',
+                    onTap: () {},
                   ),
+
                   // Add spacing between items
                   CustomPopupMenuButton(
                       buttonText: 'الموظفين و العاملين',
-                      items: const [
-                        PopupMenuItem(
-                          value: AppRoutes.mokafaatAndTaweedat,
-                          child: Text('المكافآت و التعويضات'),
-                        ),
-
-
-                      ],
+                      items: const [],
                       onSelected: (page) {
-                        switch (page) {
-                          case AppRoutes.mokafaatAndTaweedat:
-                            Get.toNamed(AppRoutes.mokafaatAndTaweedat);
-                            break;
-
-
-                        }
+                        switch (page) {}
                       }),
 
                   CustomPopupMenuButton(
@@ -73,6 +59,10 @@ class BaseScreen extends StatelessWidget {
                         PopupMenuItem(
                           value: AppRoutes.tarmeezGenseat,
                           child: Text('ترميز الجنسيات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.mokafaatAndTaweedat,
+                          child: Text('المكافآت و التعويضات'),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.tarmeezMokhalafat,
@@ -89,7 +79,6 @@ class BaseScreen extends StatelessWidget {
                         PopupMenuItem(
                           value: AppRoutes.tasneefAlDowal,
                           child: Text('  تصنيف الدول حسب فئات البدل'),
-
                         ),
                         PopupMenuItem(
                           value: AppRoutes.sollamDaragatAlAamal,
@@ -104,13 +93,16 @@ class BaseScreen extends StatelessWidget {
                           case AppRoutes.tarmeezMokhalafat:
                             Get.toNamed(AppRoutes.tarmeezMokhalafat);
                             break;
+                          case AppRoutes.mokafaatAndTaweedat:
+                            Get.toNamed(AppRoutes.mokafaatAndTaweedat);
+                            break;
                           case AppRoutes.tarmeezGenseat:
                             Get.toNamed(AppRoutes.tarmeezGenseat);
                             break;
                           case AppRoutes.tarmeezBeanatAlBaladea:
                             Get.toNamed(AppRoutes.tarmeezBeanatAlBaladea);
                             break;
-                          case AppRoutes.tasneefAlDowal :
+                          case AppRoutes.tasneefAlDowal:
                             Get.toNamed(AppRoutes.tasneefAlDowal);
                             break;
                           case AppRoutes.sollamDaragatAlAamal:

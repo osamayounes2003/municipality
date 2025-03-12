@@ -12,10 +12,12 @@ class BeanatAlBaladeaController extends GetxController {
   late final TextEditingController modeerShoonMawadafeen;
   late final TextEditingController modakek;
   late final TextEditingController modeerIdaraShoonMalia;
+  late final TextEditingController modeerShoonMalia;
   late final TextEditingController mowazafMokhtas;
   late final TextEditingController mowazafMokhtasMosaed;
   late final TextEditingController badalGhalaaMaeshaa;
   late final TextEditingController kisimHarakaSeana;
+  late final TextEditingController baladeaIPAN;
 
   var municipalitySymbol = ''.obs;
 
@@ -43,6 +45,8 @@ class BeanatAlBaladeaController extends GetxController {
     mowazafMokhtasMosaed = TextEditingController();
     badalGhalaaMaeshaa = TextEditingController();
     kisimHarakaSeana = TextEditingController();
+    modeerShoonMalia = TextEditingController();
+    baladeaIPAN = TextEditingController();
     super.onInit();
   }
 
@@ -61,6 +65,8 @@ class BeanatAlBaladeaController extends GetxController {
     mowazafMokhtasMosaed.dispose();
     badalGhalaaMaeshaa.dispose();
     kisimHarakaSeana.dispose();
+    modeerShoonMalia.dispose();
+    baladeaIPAN.dispose();
     super.onClose();
   }
 }

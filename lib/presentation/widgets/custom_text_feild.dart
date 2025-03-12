@@ -39,6 +39,8 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           Container(
+            constraints:
+                BoxConstraints(maxHeight: customHeight, maxWidth: customWidth),
             width: customWidth,
             height: customHeight,
             child: TextField(

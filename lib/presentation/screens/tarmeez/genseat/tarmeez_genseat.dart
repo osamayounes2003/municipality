@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
+import 'package:municipality/presentation/screens/tarmeez/genseat/tarmeez_al_genseat_conroller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
 
 import '../../../widgets/custom_data_table.dart';
@@ -11,6 +12,7 @@ class TarmeezGenseat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TarmeezGenseatController controller = Get.put(TarmeezGenseatController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
@@ -44,6 +46,7 @@ class TarmeezGenseat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
+                    controller: controller.nationalityId,
                     label: "رمز الجنسية",
                     customHeight: 30,
                     customWidth: currentWidth / 5,
@@ -53,6 +56,7 @@ class TarmeezGenseat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
+                    controller: controller.nationality,
                     label: "اسم الجنسية",
                     customHeight: 30,
                     customWidth: currentWidth / 3,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
+import 'package:municipality/presentation/screens/tarmeez/mokhalafat/tarmeez_al_mokhalafat_controller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
 import 'package:municipality/presentation/widgets/custom_data_table.dart';
 
@@ -11,6 +12,8 @@ class TarmeezMokhalafat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TarmeezMokhalafatController controller =
+        Get.put(TarmeezMokhalafatController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
@@ -48,6 +51,7 @@ class TarmeezMokhalafat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
+                    controller: controller.violacityId,
                     label: "رمز المخالفة",
                     customHeight: 30,
                     customWidth: currentWidth / 5,
@@ -57,6 +61,7 @@ class TarmeezMokhalafat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
+                    controller: controller.violacity,
                     label: "اسم المخالفة",
                     customHeight: 30,
                     customWidth: currentWidth / 3,
