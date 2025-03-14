@@ -6,19 +6,23 @@ class CustomTextField extends StatelessWidget {
   final String? hint;
   final double customHeight;
   final bool obscureText;
+  final Widget? prefixIcon;
   final double customWidth;
   final TextEditingController? controller;
   final Widget? suffixIcon;
+  final Function()? onTap;
 
   CustomTextField({
     Key? key,
     required this.label,
     this.obscureText = false,
+    this.prefixIcon,
     this.controller, // Ensure controller is passed
     required this.customHeight,
     required this.customWidth,
     this.hint,
     this.suffixIcon,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -33,7 +37,7 @@ class CustomTextField extends StatelessWidget {
             child: Text(
               label,
               style: const TextStyle(
-                fontSize: 10,
+                fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -44,11 +48,13 @@ class CustomTextField extends StatelessWidget {
             width: customWidth,
             height: customHeight,
             child: TextField(
+              onTap: onTap,
               controller: controller,
               maxLines: null,
               style: const TextStyle(fontSize: 10, color: AppColors.black),
               obscureText: obscureText,
               decoration: InputDecoration(
+                prefixIcon: prefixIcon,
                 suffixIcon: suffixIcon,
                 hintText: hint,
                 border: InputBorder.none,

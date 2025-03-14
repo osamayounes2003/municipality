@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:municipality/core/extensions/widget_extension.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/screens/tarmeez/dowal/tasneef_al_dowal_controller.dart';
+import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries_controller.dart';
 
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
 
-class TasneefAlDowal extends StatelessWidget {
-  const TasneefAlDowal({super.key});
+class BadalCountries extends StatelessWidget {
+  const BadalCountries({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TasneefAlDowalController controller = Get.put(TasneefAlDowalController());
+    BadalCountriesController controller = Get.put(BadalCountriesController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
@@ -58,30 +59,22 @@ class TasneefAlDowal extends StatelessWidget {
                     controller: controller.classificationId,
                     label: "رمز التصنيف",
                     customHeight: 30,
-                    customWidth: currentWidth / 5,
+                    customWidth: currentWidth / 6,
                   ),
-                ],
-              ),
-              Row(
-                children: [
                   CustomTextField(
                     controller: controller.country,
                     label: "اسم الدولة",
                     customHeight: 30,
-                    customWidth: currentWidth / 3,
+                    customWidth: currentWidth / 6,
                   ),
-                ],
-              ),
-              Row(
-                children: [
                   CustomTextField(
                     controller: controller.category,
                     label: 'الفئة',
                     customHeight: 30,
-                    customWidth: currentWidth / 3,
+                    customWidth: currentWidth / 6,
                   ),
                 ],
-              ),
+              ).scrollDirection(Axis.horizontal),
               const SizedBox(
                 height: 10,
               ),
@@ -92,9 +85,13 @@ class TasneefAlDowal extends StatelessWidget {
                 width: 80,
               ),
               CustomDataTable(
-                columns: data.isNotEmpty ? data.first.keys.toList() : [],
+                columns: [
+                  'رمز التصنيف',
+                  'اسم الدولة',
+                  'الفئة',
+                ],
                 rows: data.map((item) => item.values.toList()).toList(),
-                height: currentHeight / 3,
+                height: currentHeight,
               ),
             ],
           ),

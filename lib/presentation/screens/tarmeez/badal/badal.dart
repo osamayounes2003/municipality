@@ -6,15 +6,14 @@ import 'package:municipality/presentation/screens/base_screen.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
-import 'mokafat_tawedat_controller.dart';
+import 'badal_controller.dart';
 
-class MokafaatAndTaweedat extends StatelessWidget {
-  const MokafaatAndTaweedat({super.key});
+class Badal extends StatelessWidget {
+  const Badal({super.key});
 
   @override
   Widget build(BuildContext context) {
-    MokafaatAndTaweedatController controller =
-        Get.put(MokafaatAndTaweedatController());
+    BadalController controller = Get.put(BadalController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
@@ -87,7 +86,7 @@ class MokafaatAndTaweedat extends StatelessWidget {
                     customWidth: currentWidth / 10,
                   ),
                 ],
-              ).scrollDirection(Axis.horizontal),
+              ).scrollDirection(Axis.horizontal).marginOnly(right: 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -116,7 +115,7 @@ class MokafaatAndTaweedat extends StatelessWidget {
                     customWidth: currentWidth / 10,
                   ),
                 ],
-              ).scrollDirection(Axis.horizontal),
+              ).scrollDirection(Axis.horizontal).marginOnly(right: 100),
               SizedBox(
                 height: 10,
               ),
@@ -132,9 +131,17 @@ class MokafaatAndTaweedat extends StatelessWidget {
                 ],
               ),
               CustomDataTable(
-                columns: data.isNotEmpty ? data.first.keys.toList() : [],
+                columns: [
+                  "الرمز",
+                  "المرتبة",
+                  "داخلي",
+                  "الفئة أ ",
+                  'الفئة ب',
+                  "الفئة ج",
+                  "مرتفعة المعيشة"
+                ],
                 rows: data.map((item) => item.values.toList()).toList(),
-                height: currentHeight / 3,
+                height: currentHeight,
               ),
             ],
           ).scrollDirection(Axis.vertical),

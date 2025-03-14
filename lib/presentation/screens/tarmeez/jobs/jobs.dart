@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/screens/tarmeez/wazefa/wazefa_controller.dart';
+import 'package:municipality/presentation/screens/tarmeez/jobs/jobs_controller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
 import 'package:municipality/presentation/widgets/custom_data_table.dart';
 
 import '../../../widgets/custom_text_feild.dart';
 
-class TarmeezWazeefa extends StatelessWidget {
-  TarmeezWazeefa({super.key});
+class Jobs extends StatelessWidget {
+  Jobs({super.key});
 
   @override
   Widget build(BuildContext context) {
-    WazefaController controller = Get.put(WazefaController());
+    JobsController controller = Get.put(JobsController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
@@ -60,7 +60,7 @@ class TarmeezWazeefa extends StatelessWidget {
                     customWidth: currentWidth / 5,
                   ),
                 ],
-              ),
+              ).marginOnly(right: 100),
               Row(
                 children: [
                   CustomTextField(
@@ -70,7 +70,7 @@ class TarmeezWazeefa extends StatelessWidget {
                     customWidth: currentWidth / 3,
                   ),
                 ],
-              ),
+              ).marginOnly(right: 100),
               SizedBox(
                 height: 10,
               ),
@@ -81,9 +81,9 @@ class TarmeezWazeefa extends StatelessWidget {
                 width: 80,
               ),
               CustomDataTable(
-                columns: data.isNotEmpty ? data.first.keys.toList() : [],
+                columns: ["الاسم", "الرمز"],
                 rows: data.map((item) => item.values.toList()).toList(),
-                height: currentHeight / 3,
+                height: currentHeight,
               )
             ],
           ),

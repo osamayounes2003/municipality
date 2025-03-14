@@ -1,35 +1,37 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/screens/tarmeez/genseat/tarmeez_al_genseat_conroller.dart';
-import 'package:municipality/presentation/widgets/custom_button.dart';
+import 'package:municipality/presentation/screens/tarmeez/parts/parts_controller.dart';
 
+import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
 
-class TarmeezGenseat extends StatelessWidget {
-  const TarmeezGenseat({super.key});
+class Parts extends StatelessWidget {
+  const Parts({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TarmeezGenseatController controller = Get.put(TarmeezGenseatController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
+    PartsController controller = Get.put(PartsController());
     final List<Map<String, String>> data = [
       {
-        'name': 'سورية ',
+        'section': 'سورية ',
         'Id': '7500',
       },
       {
-        'name': 'مصر',
+        'section': 'مصر',
         'Id': '6500',
       },
       {
-        'name': 'سورية ',
+        'section': 'سورية ',
         'Id': '7500',
       },
       {
-        'name': 'مصر',
+        'section': 'مصر',
         'Id': '6500',
       },
     ];
@@ -46,23 +48,23 @@ class TarmeezGenseat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
-                    controller: controller.nationalityId,
-                    label: "رمز الجنسية",
+                    controller: controller.sectionId,
+                    label: "رمز القسم",
                     customHeight: 30,
                     customWidth: currentWidth / 5,
                   ),
                 ],
-              ),
+              ).marginOnly(right: 100),
               Row(
                 children: [
                   CustomTextField(
-                    controller: controller.nationality,
-                    label: "اسم الجنسية",
+                    controller: controller.section,
+                    label: "اسم القسم",
                     customHeight: 30,
                     customWidth: currentWidth / 3,
                   ),
                 ],
-              ),
+              ).marginOnly(right: 100),
               SizedBox(
                 height: 10,
               ),
@@ -73,9 +75,9 @@ class TarmeezGenseat extends StatelessWidget {
                 width: 80,
               ),
               CustomDataTable(
-                columns: data.isNotEmpty ? data.first.keys.toList() : [],
+                columns: ["الاسم", "الرمز"],
                 rows: data.map((item) => item.values.toList()).toList(),
-                height: currentHeight / 3,
+                height: currentHeight,
               ),
             ],
           ),

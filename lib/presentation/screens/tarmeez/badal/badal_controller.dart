@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class MokafaatAndTaweedatController extends GetxController {
+class BadalController extends GetxController {
   late final TextEditingController id;
   late final TextEditingController rank;
   late final TextEditingController internal;

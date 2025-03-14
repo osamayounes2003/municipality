@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/constants/app_routes.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: const Locale('ar'),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.tarmeezBeanatAlBaladea,
+      initialRoute: AppRoutes.baladiaInfo,
     );
   }
 }

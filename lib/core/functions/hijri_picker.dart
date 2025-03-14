@@ -14,7 +14,8 @@ class HijriPicker {
     showModalBottomSheet(
       context: context,
       builder: (context) => SizedBox(
-        height: 400,
+        height: 300,
+        width: 350,
         child: Column(
           children: [
             const SizedBox(height: 10),
@@ -45,6 +46,7 @@ class HijriPicker {
       context: context,
       builder: (context) => SizedBox(
         height: 300,
+        width: 350,
         child: Column(
           children: [
             const SizedBox(height: 10),
@@ -75,6 +77,7 @@ class HijriPicker {
       context: context,
       builder: (context) => SizedBox(
         height: 300,
+        width: 350,
         child: Column(
           children: [
             const SizedBox(height: 10),

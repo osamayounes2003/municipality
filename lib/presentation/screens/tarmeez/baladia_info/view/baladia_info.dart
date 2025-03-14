@@ -6,15 +6,14 @@ import 'package:municipality/presentation/screens/base_screen.dart';
 import '../../../../../core/functions/hijri_picker.dart';
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text_feild.dart';
-import '../controller/beanat_al_bladea_controller.dart';
+import '../controller/baladia_info_controller.dart';
 
-class TarmeezBeanatAlBaladea extends StatelessWidget {
-  const TarmeezBeanatAlBaladea({super.key});
+class BaladiaInfo extends StatelessWidget {
+  const BaladiaInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final BeanatAlBaladeaController controller =
-        Get.put(BeanatAlBaladeaController());
+    final BaladiaInfoController controller = Get.put(BaladiaInfoController());
 
     late HijriPicker picker1 = HijriPicker(controller.tareekhBedaeaIterarea);
     late HijriPicker picker2 = HijriPicker(controller.tareekhNehaeaIterarea);
@@ -25,9 +24,10 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
         shrinkWrap: true,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     children: [
@@ -108,62 +108,57 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                 ],
               ),
             ],
-          ).scrollDirection(Axis.horizontal),
+          ).scrollDirection(Axis.horizontal).marginOnly(right: 200),
           Row(
             children: [
               Expanded(
-                flex: 2,
-                child: Column(
-                  children: [
-                    CustomButton(
-                        text: "ضبط التواريخ",
-                        onPressed: () {
-                          print(controller.kisimHarakaSeana.text);
-                        },
-                        height: currentHeight / 15,
-                        width: currentWidth / 10),
-                    CustomButton(
-                        text: "العلاوات السنوية",
-                        onPressed: () {},
-                        height: currentHeight / 15,
-                        width: currentWidth / 10),
-                    CustomButton(
-                        text: "تعديل ",
-                        onPressed: () {},
-                        height: currentHeight / 15,
-                        width: currentWidth / 10),
-                  ],
-                ).scrollDirection(Axis.vertical),
-              ),
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      CustomButton(
+                          text: "ضبط التواريخ",
+                          onPressed: () {
+                            print(controller.kisimHarakaSeana.text);
+                          },
+                          height: 40,
+                          width: 120),
+                      CustomButton(
+                          text: "العلاوات السنوية",
+                          onPressed: () {},
+                          height: 40,
+                          width: 120),
+                      CustomButton(
+                          text: "تعديل ",
+                          onPressed: () {},
+                          height: 40,
+                          width: 120),
+                    ],
+                  ).scrollDirection(Axis.vertical)),
               Expanded(
-                flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CustomButton(
-                        text: 'حفظ',
-                        onPressed: () {
-                          print(controller.tareekhBedaeaIterarea.text);
-                          print(controller.municipalitySymbol.value);
-                        },
-                        height: currentHeight / 15,
-                        width: currentWidth / 15),
-                  ],
-                ),
-              ),
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CustomButton(
+                          text: 'حفظ',
+                          onPressed: () {
+                            print(controller.tareekhBedaeaIterarea.text);
+                            print(controller.municipalitySymbol.value);
+                          },
+                          height: 40,
+                          width: 120),
+                    ],
+                  )),
               Expanded(
-                flex: 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      constraints: BoxConstraints(
-                        maxHeight: currentHeight / 11,
-                      ),
-                      child: Row(
+                  flex: 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Row(
                         children: [
                           CustomTextField(
                             label: 'تاريخ بداية الاضرارية',
+                            onTap: () => picker1.pickHijriDate(context),
                             controller: controller.tareekhBedaeaIterarea,
                             customHeight: 25,
                             customWidth: 200,
@@ -176,19 +171,15 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                             ),
                           )
                         ],
-                      ),
-                    ),
-                    Container(
-                      constraints: BoxConstraints(
-                        maxHeight: currentHeight / 11,
-                      ),
-                      child: Row(
+                      ).scrollDirection(Axis.horizontal),
+                      Row(
                         children: [
                           CustomTextField(
                             label: 'تاريخ نهاية الاضرارية',
                             controller: controller.tareekhNehaeaIterarea,
                             customHeight: 25,
                             customWidth: 200,
+                            onTap: () => picker2.pickHijriDate(context),
                             suffixIcon: IconButton(
                               onPressed: () => picker2.pickHijriDate(context),
                               icon: const Icon(
@@ -198,11 +189,9 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                             ),
                           )
                         ],
-                      ),
-                    ),
-                  ],
-                ).scrollDirection(Axis.horizontal),
-              ),
+                      ).scrollDirection(Axis.horizontal),
+                    ],
+                  )),
               Expanded(
                 flex: 2,
                 child: Column(
@@ -234,7 +223,7 @@ class TarmeezBeanatAlBaladea extends StatelessWidget {
                 ).scrollDirection(Axis.vertical),
               ),
             ],
-          ).scrollDirection(Axis.vertical),
+          ).scrollDirection(Axis.vertical).marginOnly(right: 100),
         ],
       ),
     );

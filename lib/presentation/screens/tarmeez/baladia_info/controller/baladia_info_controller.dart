@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../../../../core/functions/image_picker.dart';
 
-class BeanatAlBaladeaController extends GetxController {
+class BaladiaInfoController extends GetxController {
   late final TextEditingController tareekhBedaeaIterarea;
   late final TextEditingController tareekhNehaeaIterarea;
   late final TextEditingController municipality;

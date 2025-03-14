@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class TarmeezMokhalafatController extends GetxController {
+class DissentsController extends GetxController {
   late final TextEditingController violacity;
   late final TextEditingController violacityId;
   @override

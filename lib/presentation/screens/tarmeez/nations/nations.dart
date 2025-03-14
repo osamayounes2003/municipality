@@ -1,41 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:municipality/presentation/screens/base_screen.dart';
-import 'package:municipality/presentation/screens/tarmeez/mokhalafat/tarmeez_al_mokhalafat_controller.dart';
+import 'package:municipality/presentation/screens/tarmeez/nations/nations_controller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
-import 'package:municipality/presentation/widgets/custom_data_table.dart';
 
+import '../../../widgets/custom_data_table.dart';
 import '../../../widgets/custom_text_feild.dart';
 
-class TarmeezMokhalafat extends StatelessWidget {
-  const TarmeezMokhalafat({super.key});
+class Nations extends StatelessWidget {
+  const Nations({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TarmeezMokhalafatController controller =
-        Get.put(TarmeezMokhalafatController());
+    NationsController controller = Get.put(NationsController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
     final List<Map<String, String>> data = [
       {
-        'name': 'تاريغت',
-        'id': '7500',
+        'name': 'سورية ',
+        'Id': '7500',
       },
       {
-        'name': 'تاريغت',
-        'id': '6500',
+        'name': 'مصر',
+        'Id': '6500',
       },
       {
-        'name': 'تاريغت',
-        'id': '5900',
+        'name': 'سورية ',
+        'Id': '7500',
       },
       {
-        'name': 'تاريغت',
-        'id': '5900',
-      },
-      {
-        'name': 'تاريغت',
-        'id': '5900',
+        'name': 'مصر',
+        'Id': '6500',
       },
     ];
     return Scaffold(
@@ -51,23 +46,23 @@ class TarmeezMokhalafat extends StatelessWidget {
               Row(
                 children: [
                   CustomTextField(
-                    controller: controller.violacityId,
-                    label: "رمز المخالفة",
+                    controller: controller.nationalityId,
+                    label: "رمز الجنسية",
                     customHeight: 30,
                     customWidth: currentWidth / 5,
-                  ),
+                  ).marginOnly(right: 100),
                 ],
               ),
               Row(
                 children: [
                   CustomTextField(
-                    controller: controller.violacity,
-                    label: "اسم المخالفة",
+                    controller: controller.nationality,
+                    label: "اسم الجنسية",
                     customHeight: 30,
                     customWidth: currentWidth / 3,
                   ),
                 ],
-              ),
+              ).marginOnly(right: 100),
               SizedBox(
                 height: 10,
               ),
@@ -75,13 +70,16 @@ class TarmeezMokhalafat extends StatelessWidget {
                 text: 'حفظ',
                 onPressed: () => {},
                 height: 40,
-                width: 90,
+                width: 80,
               ),
               CustomDataTable(
-                columns: data.isNotEmpty ? data.first.keys.toList() : [],
+                columns: [
+                  "الجنسية",
+                  "الرمز",
+                ],
                 rows: data.map((item) => item.values.toList()).toList(),
-                height: currentHeight / 3,
-              )
+                height: currentHeight,
+              ),
             ],
           ),
         ),

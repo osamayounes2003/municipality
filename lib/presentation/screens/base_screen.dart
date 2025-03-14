@@ -1,11 +1,13 @@
+import 'dart:js_interop';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:municipality/presentation/screens/tarmeez/dowal/tasneef_al_dowal.dart';
-import 'package:municipality/presentation/screens/tarmeez/mokhalafat/tarmeez_mokhalafat.dart';
-import 'package:municipality/presentation/screens/tarmeez/tarmeez_beanat_al_baladea/view/tarmeez_beanat_al_baladea.dart';
-import 'package:municipality/presentation/screens/tarmeez/wazefa/tarmeez_wazeefa.dart';
+import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
+import 'package:municipality/presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
+import 'package:municipality/presentation/screens/tarmeez/dissents/dissents.dart';
+import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_routes.dart';
@@ -32,7 +34,7 @@ class BaseScreen extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: SizedBox(
-              height: currentHeight / 10,
+              height: currentHeight / 11,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -53,77 +55,76 @@ class BaseScreen extends StatelessWidget {
                       buttonText: 'الترميز',
                       items: const [
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezBeanatAlBaladea,
-                          child: Text('ترميز بيانات البلدية'),
+                          value: AppRoutes.baladiaInfo,
+                          child: Text(' بيانات البلدية'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezGenseat,
-                          child: Text('ترميز الجنسيات'),
+                          value: AppRoutes.nations,
+                          child: Text('أنواع الجنسيات'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.mokafaatAndTaweedat,
-                          child: Text('المكافآت و التعويضات'),
+                          value: AppRoutes.badal,
+                          child: Text('بدل الانتداب '),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezMokhalafat,
-                          child: Text('ترميز المخالفات'),
+                          value: AppRoutes.dissents,
+                          child: Text('أنواع المخالفات'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezWazeefa,
-                          child: Text('ترميز الوظيفة'),
+                          value: AppRoutes.jobs,
+                          child: Text('أنواع الوظائف'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tarmeezAlKisim,
-                          child: Text('ترميز القسم'),
+                          value: AppRoutes.parts,
+                          child: Text('أنواع الأقسام'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.tasneefAlDowal,
+                          value: AppRoutes.badalCountries,
                           child: Text('  تصنيف الدول حسب فئات البدل'),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.sollamDaragatAlAamal,
-                          child: Text('سلم درجات عمال'),
+                          value: AppRoutes.empDegrees,
+                          child: Text('سلم درجات العمال'),
                         ),
                       ],
                       onSelected: (page) {
                         switch (page) {
-                          case AppRoutes.tarmeezWazeefa:
-                            Get.toNamed(AppRoutes.tarmeezWazeefa);
+                          case AppRoutes.jobs:
+                            Get.toNamed(AppRoutes.jobs);
                             break;
-                          case AppRoutes.tarmeezMokhalafat:
-                            Get.toNamed(AppRoutes.tarmeezMokhalafat);
+                          case AppRoutes.dissents:
+                            Get.toNamed(AppRoutes.dissents);
                             break;
-                          case AppRoutes.mokafaatAndTaweedat:
-                            Get.toNamed(AppRoutes.mokafaatAndTaweedat);
+                          case AppRoutes.badalCountries:
+                            Get.toNamed(AppRoutes.badalCountries);
                             break;
-                          case AppRoutes.tarmeezGenseat:
-                            Get.toNamed(AppRoutes.tarmeezGenseat);
+                          case AppRoutes.nations:
+                            Get.toNamed(AppRoutes.nations);
                             break;
-                          case AppRoutes.tarmeezBeanatAlBaladea:
-                            Get.toNamed(AppRoutes.tarmeezBeanatAlBaladea);
+                          case AppRoutes.baladiaInfo:
+                            Get.toNamed(AppRoutes.baladiaInfo);
                             break;
-                          case AppRoutes.tasneefAlDowal:
-                            Get.toNamed(AppRoutes.tasneefAlDowal);
+                          case AppRoutes.badal:
+                            Get.toNamed(AppRoutes.badal);
                             break;
-                          case AppRoutes.sollamDaragatAlAamal:
-                            Get.toNamed(AppRoutes.sollamDaragatAlAamal);
+                          case AppRoutes.empDegrees:
+                            Get.toNamed(AppRoutes.empDegrees);
                             break;
-                          case AppRoutes.tarmeezAlKisim:
-                            Get.toNamed(AppRoutes.tarmeezAlKisim);
+                          case AppRoutes.parts:
+                            Get.toNamed(AppRoutes.parts);
                             break;
                         }
                       }),
                   ClickableText(
                       text: 'البحث و الاستعلام',
-                      onTap: () => Get.to(const TarmeezBeanatAlBaladea())),
+                      onTap: () => Get.to(const BaladiaInfo())),
                   ClickableText(
                       text: 'متابعة طلبات الموظفين',
-                      onTap: () => Get.to(TarmeezMokhalafat())),
+                      onTap: () => Get.to(Dissents())),
                   ClickableText(
                       text: 'التقارير و الطباعة',
-                      onTap: () => Get.to(const TasneefAlDowal())),
-                  ClickableText(
-                      text: 'خروج', onTap: () => Get.to(TarmeezWazeefa())),
+                      onTap: () => Get.to(const BadalCountries())),
+                  ClickableText(text: 'خروج', onTap: () => Get.to(Jobs())),
                 ],
               ),
             ),

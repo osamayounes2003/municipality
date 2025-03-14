@@ -10,11 +10,13 @@ class CustomDataTable extends StatelessWidget {
   final List<List<dynamic>> rows;
   final double height;
 
+  final Function? onTap;
   const CustomDataTable({
     super.key,
     required this.columns,
     required this.rows,
     required this.height,
+    this.onTap,
   });
 
   void showEditDialog(BuildContext context, List<dynamic> rowData) {
@@ -68,7 +70,7 @@ class CustomDataTable extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: height,
-      child: ListView(children: [
+      child: ListView(shrinkWrap: true, children: [
         DataTable(
           border: TableBorder(
             top: tableBorderSide(2, AppColors.black),
@@ -80,28 +82,24 @@ class CustomDataTable extends StatelessWidget {
           ),
           headingRowColor: MaterialStateProperty.all(AppColors.grey),
           columns: [
+            const DataColumn(label: Text('العمليات')),
             ...columns.map(
               (column) => DataColumn(
                 label: Expanded(child: Text(column)),
               ),
             ),
-            const DataColumn(label: Text('Actions')),
           ],
           rows: rows.map((row) {
             return DataRow(
               cells: [
-                ...row.map((cell) => DataCell(onTap: () {
-                      print('object');
-                    }, Text(cell.toString()))),
                 DataCell(
                   Row(
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.edit),
-                        onPressed: () {
-                          showEditDialog(context, row);
-                        },
-                      ),
+                          icon: const Icon(Icons.edit),
+                          onPressed: () {
+                            showEditDialog(context, row);
+                          }),
                       IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
@@ -111,6 +109,8 @@ class CustomDataTable extends StatelessWidget {
                     ],
                   ),
                 ),
+                ...row.map(
+                    (cell) => DataCell(onTap: () {}, Text(cell.toString()))),
               ],
             );
           }).toList(),

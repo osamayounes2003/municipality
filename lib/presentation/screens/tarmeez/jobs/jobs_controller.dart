@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class WazefaController extends GetxController {
+class JobsController extends GetxController {
   late final TextEditingController job;
   late final TextEditingController jobId;
   @override

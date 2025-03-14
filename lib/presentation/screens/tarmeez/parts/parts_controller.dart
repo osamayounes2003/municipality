@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TarmeezAlKisimController extends GetxController {
+class PartsController extends GetxController {
   late final TextEditingController sectionId;
 
   late final TextEditingController section;

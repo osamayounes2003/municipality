@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class TarmeezGenseatController extends GetxController {
+class NationsController extends GetxController {
   late final TextEditingController nationalityId;
   late final TextEditingController nationality;
   @override
