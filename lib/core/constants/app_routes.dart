@@ -1,4 +1,12 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:municipality/presentation/screens/moazafeen/iqrar/iqrar.dart';
+import 'package:municipality/presentation/screens/moazafeen/kharij/kharij_dawam.dart';
+import 'package:municipality/presentation/screens/search/dawrat/presentation/pages/dawrat_search.dart';
+import 'package:municipality/presentation/screens/search/employees/presentation/pages/employees.dart';
+import 'package:municipality/presentation/screens/search/hasmeat/presentation/pages/hasmeat_search.dart';
+import 'package:municipality/presentation/screens/search/ijazat/presentation/pages/ijazat_search.dart';
+import 'package:municipality/presentation/screens/search/intedab/presentation/pages/intedap.dart';
+import 'package:municipality/presentation/screens/search/kharij_dawam/presentation/pages/kharij_dawam_search.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal/badal.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
 import 'package:municipality/presentation/screens/tarmeez/dissents/dissents.dart';
@@ -7,9 +15,10 @@ import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
 import 'package:municipality/presentation/screens/tarmeez/nations/nations.dart';
 import 'package:municipality/presentation/screens/tarmeez/parts/parts.dart';
 
+import '../../presentation/screens/search/dissents/presentation/pages/dissents.dart';
 import '../../presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
 import '../../presentation/screens/wait_all/beanat_wazaef_asasea.dart';
-import '../../presentation/screens/wait_all/tafweed.dart';
+import '../../presentation/screens/moazafeen/tafweed/tafweed.dart';
 
 class AppRoutes {
   static const String baladiaInfo = '/';
@@ -24,6 +33,16 @@ class AppRoutes {
   //هظول مش للترميز
   static const String tafweed = '/tafweed';
   static const String beanatWazaefAsasea = '/beanat_wazaef_asasea';
+  static const String kharijD = '/kharijD';
+  static const String iqrar = '/iqrar';
+  //search
+  static const String employeeSearch = '/employee_search';
+  static const String intedabSearch = '/intedab_search';
+  static const String dawratSearch = '/dawrat_search';
+  static const String dissentSearch = '/dissents_search';
+  static const String hasmeatSearch = '/hasmeat_search';
+  static const String ijazatSearch = '/ijazat_search';
+  static const String kharijDawamSearch = '/kharij_dawam_search';
   static List<GetPage> routes = [
     GetPage(
       name: baladiaInfo,
@@ -65,6 +84,42 @@ class AppRoutes {
     GetPage(
       name: AppRoutes.beanatWazaefAsasea,
       page: () => const BeanatWazaefAsasea(),
+    ),
+    GetPage(
+      name: AppRoutes.kharijD,
+      page: () => const KharijDawam(),
+    ),
+    GetPage(
+      name: AppRoutes.iqrar,
+      page: () => const Iqrar(),
+    ),
+    GetPage(
+      name: AppRoutes.employeeSearch,
+      page: () => const EmployeesSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.intedabSearch,
+      page: () => const IntedabSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.dissentSearch,
+      page: () => const DissentsSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.dawratSearch,
+      page: () => const DawratSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.kharijDawamSearch,
+      page: () => const KharijDawamSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.ijazatSearch,
+      page: () => IjazatSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.hasmeatSearch,
+      page: () => const HasmeatSearch(),
     ),
   ];
 }

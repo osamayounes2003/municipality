@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:municipality/core/extensions/widget_extension.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
 import 'package:municipality/presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
 import 'package:municipality/presentation/screens/tarmeez/dissents/dissents.dart';
@@ -24,8 +25,8 @@ class BaseScreen extends StatelessWidget {
     double currentHeight = Get.height;
     double currentWidth = Get.width;
     return Scaffold(
-        body: ListView(
-      shrinkWrap: true,
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
           constraints:
@@ -46,9 +47,31 @@ class BaseScreen extends StatelessWidget {
                   // Add spacing between items
                   CustomPopupMenuButton(
                       buttonText: 'الموظفين و العاملين',
-                      items: const [],
+                      items: const [
+                        PopupMenuItem(
+                          value: AppRoutes.tafweed,
+                          child: Text("تفويض"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.kharijD,
+                          child: Text("خارج الدوام"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.iqrar,
+                          child: Text("إقرار"),
+                        )
+                      ],
                       onSelected: (page) {
-                        switch (page) {}
+                        switch (page) {
+                          case AppRoutes.tafweed:
+                            Get.toNamed(AppRoutes.tafweed);
+                            break;
+                          case AppRoutes.kharijD:
+                            Get.toNamed(AppRoutes.kharijD);
+                            break;
+                          case AppRoutes.iqrar:
+                            Get.toNamed(AppRoutes.iqrar);
+                        }
                       }),
 
                   CustomPopupMenuButton(
@@ -115,22 +138,84 @@ class BaseScreen extends StatelessWidget {
                             break;
                         }
                       }),
-                  ClickableText(
-                      text: 'البحث و الاستعلام',
-                      onTap: () => Get.to(const BaladiaInfo())),
+                  CustomPopupMenuButton(
+                      buttonText: 'البحث و الاستعلام',
+                      items: const [
+                        PopupMenuItem(
+                          value: AppRoutes.employeeSearch,
+                          child: Text('الموظفين'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.intedabSearch,
+                          child: Text('الإنتداب'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.dawratSearch,
+                          child: Text('الدورات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.kharijDawamSearch,
+                          child: Text('خارج الدوام'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.dissentSearch,
+                          child: Text('المخالفات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.ijazatSearch,
+                          child: Text('الإجازات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.hasmeatSearch,
+                          child: Text('الحسميات'),
+                        ),
+                      ],
+                      onSelected: (page) {
+                        switch (page) {
+                          case AppRoutes.employeeSearch:
+                            Get.toNamed(AppRoutes.employeeSearch);
+                            break;
+                          case AppRoutes.intedabSearch:
+                            Get.toNamed(AppRoutes.intedabSearch);
+                            break;
+                          case AppRoutes.dissentSearch:
+                            Get.toNamed(AppRoutes.dissentSearch);
+                            break;
+                          case AppRoutes.dawratSearch:
+                            Get.toNamed(AppRoutes.dawratSearch);
+                            break;
+                          case AppRoutes.ijazatSearch:
+                            Get.toNamed(AppRoutes.ijazatSearch);
+                            break;
+                          case AppRoutes.kharijDawamSearch:
+                            Get.toNamed(AppRoutes.kharijDawamSearch);
+                            break;
+                          case AppRoutes.hasmeatSearch:
+                            Get.toNamed(AppRoutes.hasmeatSearch);
+                            break;
+                        }
+                      }),
                   ClickableText(
                       text: 'متابعة طلبات الموظفين',
                       onTap: () => Get.to(Dissents())),
                   ClickableText(
-                      text: 'التقارير و الطباعة',
-                      onTap: () => Get.to(const BadalCountries())),
-                  ClickableText(text: 'خروج', onTap: () => Get.to(Jobs())),
+                    text: 'التقارير و الطباعة',
+                    onTap: () => Get.to(
+                      const BadalCountries(),
+                    ),
+                  ),
+                  ClickableText(
+                    text: 'خروج',
+                    onTap: () => Get.to(
+                      Jobs(),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ),
-        widget,
+        widget.expanded(flex: 1),
       ],
     ));
   }

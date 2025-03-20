@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:municipality/core/constants/app_colors.dart';
+
+import '../../core/constants/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
@@ -11,8 +12,9 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final Function()? onTap;
+  final bool enabled;
 
-  CustomTextField({
+  const CustomTextField({
     Key? key,
     required this.label,
     this.obscureText = false,
@@ -23,6 +25,7 @@ class CustomTextField extends StatelessWidget {
     this.hint,
     this.suffixIcon,
     this.onTap,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -50,8 +53,12 @@ class CustomTextField extends StatelessWidget {
             child: TextField(
               onTap: onTap,
               controller: controller,
+              enabled: enabled,
               maxLines: null,
-              style: const TextStyle(fontSize: 10, color: AppColors.black),
+              style: const TextStyle(
+                  fontSize: 12,
+                  color: AppColors.black,
+                  fontWeight: FontWeight.w900),
               obscureText: obscureText,
               decoration: InputDecoration(
                 prefixIcon: prefixIcon,
@@ -64,6 +71,9 @@ class CustomTextField extends StatelessWidget {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.black, width: 1.0),
+                ),
+                disabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
                 ),
               ),
             ),
