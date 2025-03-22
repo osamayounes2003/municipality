@@ -3,10 +3,16 @@ import 'package:municipality/presentation/screens/moazafeen/iqrar/iqrar.dart';
 import 'package:municipality/presentation/screens/moazafeen/kharij/kharij_dawam.dart';
 import 'package:municipality/presentation/screens/search/dawrat/presentation/pages/dawrat_search.dart';
 import 'package:municipality/presentation/screens/search/employees/presentation/pages/employees.dart';
+import 'package:municipality/presentation/screens/search/end_service/presentation/pages/end_service_search.dart';
 import 'package:municipality/presentation/screens/search/hasmeat/presentation/pages/hasmeat_search.dart';
 import 'package:municipality/presentation/screens/search/ijazat/presentation/pages/ijazat_search.dart';
 import 'package:municipality/presentation/screens/search/intedab/presentation/pages/intedap.dart';
+import 'package:municipality/presentation/screens/search/iqrar/presentation/pages/iqrar_search.dart';
 import 'package:municipality/presentation/screens/search/kharij_dawam/presentation/pages/kharij_dawam_search.dart';
+import 'package:municipality/presentation/screens/search/medical_examination/presentation/controllers/medical_examination_controller.dart';
+import 'package:municipality/presentation/screens/search/medical_examination/presentation/pages/medical_examination_search.dart';
+import 'package:municipality/presentation/screens/search/qarar_mobasharah/presentation/controllers/qarar_mobasharah_controller.dart';
+import 'package:municipality/presentation/screens/search/tafweed/presentation/pages/tafweed_search.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal/badal.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
 import 'package:municipality/presentation/screens/tarmeez/dissents/dissents.dart';
@@ -15,7 +21,9 @@ import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
 import 'package:municipality/presentation/screens/tarmeez/nations/nations.dart';
 import 'package:municipality/presentation/screens/tarmeez/parts/parts.dart';
 
-import '../../presentation/screens/search/dissents/presentation/pages/dissents.dart';
+import '../../presentation/screens/search/dissents/presentation/pages/dissents_search.dart';
+import '../../presentation/screens/search/promotion/presentation/pages/promotion_search.dart';
+import '../../presentation/screens/search/qarar_mobasharah/presentation/pages/qarar_mobasharah_search.dart';
 import '../../presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
 import '../../presentation/screens/wait_all/beanat_wazaef_asasea.dart';
 import '../../presentation/screens/moazafeen/tafweed/tafweed.dart';
@@ -43,6 +51,12 @@ class AppRoutes {
   static const String hasmeatSearch = '/hasmeat_search';
   static const String ijazatSearch = '/ijazat_search';
   static const String kharijDawamSearch = '/kharij_dawam_search';
+  static const String tafweedSearch = '/tafweed_search';
+  static const String medicalExaminationSearch = '/medical_examination_search';
+  static const String qararMobasharahSearch = '/qarar_mobasharah_search';
+  static const String iqrarSearch = '/iqrar_search';
+  static const String promotionSearch = '/promotion_search';
+  static const String endServiceSearch = '/end_service_search';
   static List<GetPage> routes = [
     GetPage(
       name: baladiaInfo,
@@ -120,6 +134,30 @@ class AppRoutes {
     GetPage(
       name: AppRoutes.hasmeatSearch,
       page: () => const HasmeatSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.tafweedSearch,
+      page: () => const TafweedSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.medicalExaminationSearch,
+      page: () => const MedicalExaminationSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.qararMobasharahSearch,
+      page: () => const QararMobasharahSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.iqrarSearch,
+      page: () => const IqrarSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.promotionSearch,
+      page: () => const PromotionSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.endServiceSearch,
+      page: () => const EndServiceSearch(),
     ),
   ];
 }

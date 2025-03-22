@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:municipality/core/extensions/widget_extension.dart';
 
 class CustomPopupMenuButton extends StatelessWidget {
   final List<PopupMenuEntry<String>> items;
@@ -18,9 +19,9 @@ class CustomPopupMenuButton extends StatelessWidget {
       onSelected: onSelected,
       itemBuilder: (BuildContext context) => items,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Text(buttonText),
       ),
-    );
+    ).scrollDirection(Axis.vertical);
   }
 }

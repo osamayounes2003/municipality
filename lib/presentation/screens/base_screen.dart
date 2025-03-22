@@ -143,31 +143,59 @@ class BaseScreen extends StatelessWidget {
                       items: const [
                         PopupMenuItem(
                           value: AppRoutes.employeeSearch,
-                          child: Text('الموظفين'),
+                          child: Text('الاستعلام عن موظف'),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.intedabSearch,
-                          child: Text('الإنتداب'),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.dawratSearch,
-                          child: Text('الدورات'),
+                          child: Text('الاستعلام عن انتداب'),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.kharijDawamSearch,
-                          child: Text('خارج الدوام'),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.dissentSearch,
-                          child: Text('المخالفات'),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.ijazatSearch,
-                          child: Text('الإجازات'),
+                          child: Text(' الاستعلام عن خارج الدوام'),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.hasmeatSearch,
-                          child: Text('الحسميات'),
+                          child: Text(' الاستعلام عن الحسميات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.dissentSearch,
+                          child: Text(' الاستعلام عن المخالفات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.ijazatSearch,
+                          child: Text(' الاستعلام عن إجازة'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.dawratSearch,
+                          child: Text(' الاستعلام عن الدورات'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.medicalExaminationSearch,
+                          child: Text(' الاستعلام عن كشف طبي'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.qararMobasharahSearch,
+                          child: Text(' الاستعلام عن مباشرة'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.iqrarSearch,
+                          child: Text(' الاستعلام عن إقرار'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.promotionSearch,
+                          child: Text(' الاستعلام عن ترقية'),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.endServiceSearch,
+                          child: Text(' الاستعلام عن إلغاء خدمة'),
+                        ),
+                        // PopupMenuItem(
+                        //   value: AppRoutes.hasmeatSearch,
+                        //   child: Text(' الاستعلام عن إقرار جواز سفر'),
+                        // ),
+                        PopupMenuItem(
+                          value: AppRoutes.tafweedSearch,
+                          child: Text(' الاستعلام عن تفويض'),
                         ),
                       ],
                       onSelected: (page) {
@@ -192,6 +220,24 @@ class BaseScreen extends StatelessWidget {
                             break;
                           case AppRoutes.hasmeatSearch:
                             Get.toNamed(AppRoutes.hasmeatSearch);
+                            break;
+                          case AppRoutes.tafweedSearch:
+                            Get.toNamed(AppRoutes.tafweedSearch);
+                            break;
+                          case AppRoutes.medicalExaminationSearch:
+                            Get.toNamed(AppRoutes.medicalExaminationSearch);
+                            break;
+                          case AppRoutes.qararMobasharahSearch:
+                            Get.toNamed(AppRoutes.qararMobasharahSearch);
+                            break;
+                          case AppRoutes.promotionSearch:
+                            Get.toNamed(AppRoutes.promotionSearch);
+                            break;
+                          case AppRoutes.iqrarSearch:
+                            Get.toNamed(AppRoutes.iqrarSearch);
+                            break;
+                          case AppRoutes.endServiceSearch:
+                            Get.toNamed(AppRoutes.endServiceSearch);
                             break;
                         }
                       }),

@@ -19,7 +19,7 @@ class CustomTextField extends StatelessWidget {
     required this.label,
     this.obscureText = false,
     this.prefixIcon,
-    this.controller, // Ensure controller is passed
+    this.controller, // Ensure controllers is passed
     required this.customHeight,
     required this.customWidth,
     this.hint,

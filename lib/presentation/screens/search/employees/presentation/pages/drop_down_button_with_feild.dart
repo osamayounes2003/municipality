@@ -29,7 +29,7 @@ class DropdownTextField extends StatelessWidget {
           return CustomTextField(
               label: label,
               controller: controller..text = selectedValue.value,
-              suffixIcon: Icon(Icons.arrow_drop_down_sharp),
+              suffixIcon: const Icon(Icons.arrow_drop_down_sharp),
               enabled: true,
               onTap: () {
                 _showDropdown(context);
@@ -45,7 +45,7 @@ class DropdownTextField extends StatelessWidget {
     Get.dialog(
       AlertDialog(
         title: Text(hintText),
-        content: Container(
+        content: SizedBox(
           width: 100,
           height: Get.height,
           child: ListView.builder(
@@ -54,9 +54,8 @@ class DropdownTextField extends StatelessWidget {
               return ListTile(
                 title: Text(items[index]),
                 onTap: () {
-                  selectedValue.value =
-                      items[index]; // Update the selected value
-                  Get.back(); // Close the dialog
+                  selectedValue.value = items[index];
+                  Get.back();
                 },
               );
             },
