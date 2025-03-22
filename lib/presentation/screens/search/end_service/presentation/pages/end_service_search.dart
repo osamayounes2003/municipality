@@ -33,6 +33,7 @@ class EndServiceSearch extends StatelessWidget {
                           customHeight: 35,
                           customWidth: 300),
                       CustomTextField(
+                          enabled: false,
                           controller: controller.user,
                           label: 'المستخدم',
                           customHeight: 35,
