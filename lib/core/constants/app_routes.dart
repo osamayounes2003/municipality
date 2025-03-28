@@ -9,9 +9,7 @@ import 'package:municipality/presentation/screens/search/ijazat/presentation/pag
 import 'package:municipality/presentation/screens/search/intedab/presentation/pages/intedap.dart';
 import 'package:municipality/presentation/screens/search/iqrar/presentation/pages/iqrar_search.dart';
 import 'package:municipality/presentation/screens/search/kharij_dawam/presentation/pages/kharij_dawam_search.dart';
-import 'package:municipality/presentation/screens/search/medical_examination/presentation/controllers/medical_examination_controller.dart';
 import 'package:municipality/presentation/screens/search/medical_examination/presentation/pages/medical_examination_search.dart';
-import 'package:municipality/presentation/screens/search/qarar_mobasharah/presentation/controllers/qarar_mobasharah_controller.dart';
 import 'package:municipality/presentation/screens/search/tafweed/presentation/pages/tafweed_search.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal/badal.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
@@ -20,11 +18,12 @@ import 'package:municipality/presentation/screens/tarmeez/emp_degrees/emp_degree
 import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
 import 'package:municipality/presentation/screens/tarmeez/nations/nations.dart';
 import 'package:municipality/presentation/screens/tarmeez/parts/parts.dart';
-
+import 'package:municipality/presentation/screens/track_requests_of_employees/leave_requests/presentation/pages/leave_requests.dart';
 import '../../presentation/screens/search/dissents/presentation/pages/dissents_search.dart';
 import '../../presentation/screens/search/promotion/presentation/pages/promotion_search.dart';
 import '../../presentation/screens/search/qarar_mobasharah/presentation/pages/qarar_mobasharah_search.dart';
 import '../../presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
+import '../../presentation/screens/track_requests_of_employees/transferring_leave_balance/presentation/pages/transferring_leave_balance.dart';
 import '../../presentation/screens/wait_all/beanat_wazaef_asasea.dart';
 import '../../presentation/screens/moazafeen/tafweed/tafweed.dart';
 
@@ -43,6 +42,7 @@ class AppRoutes {
   static const String beanatWazaefAsasea = '/beanat_wazaef_asasea';
   static const String kharijD = '/kharijD';
   static const String iqrar = '/iqrar';
+
   //search
   static const String employeeSearch = '/employee_search';
   static const String intedabSearch = '/intedab_search';
@@ -57,6 +57,10 @@ class AppRoutes {
   static const String iqrarSearch = '/iqrar_search';
   static const String promotionSearch = '/promotion_search';
   static const String endServiceSearch = '/end_service_search';
+
+  //متابعة الموظفين
+  static const String leaveRequestsTracking = '/leave_requests_tracking';
+  static const String transferringLeaveBalance = '/transferring_leave_balance';
   static List<GetPage> routes = [
     GetPage(
       name: baladiaInfo,
@@ -158,6 +162,14 @@ class AppRoutes {
     GetPage(
       name: AppRoutes.endServiceSearch,
       page: () => const EndServiceSearch(),
+    ),
+    GetPage(
+      name: AppRoutes.leaveRequestsTracking,
+      page: () => const LeaveRequestsTracking(),
+    ),
+    GetPage(
+      name: AppRoutes.transferringLeaveBalance,
+      page: () => const TransferringLeaveBalance(),
     ),
   ];
 }

@@ -30,13 +30,13 @@ class PromotionSearch extends StatelessWidget {
                       CustomTextField(
                           enabled: false,
                           controller: controller.employee,
-                          label: 'الموظف',
+                          label: 'اسم الموظف',
                           customHeight: 35,
                           customWidth: 300),
                       CustomTextField(
                           enabled: false,
-                          controller: controller.employee,
-                          label: 'اسم القرار',
+                          controller: controller.number,
+                          label: 'رقم القرار',
                           customHeight: 35,
                           customWidth: 300),
                     ],

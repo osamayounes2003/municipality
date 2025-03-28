@@ -1,15 +1,8 @@
-import 'dart:js_interop';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:municipality/core/extensions/widget_extension.dart';
 import 'package:municipality/presentation/screens/tarmeez/badal_countries/badal_countries.dart';
-import 'package:municipality/presentation/screens/tarmeez/baladia_info/view/baladia_info.dart';
-import 'package:municipality/presentation/screens/tarmeez/dissents/dissents.dart';
 import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
-
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_routes.dart';
 import '../widgets/clickable_text.dart';
@@ -241,9 +234,28 @@ class BaseScreen extends StatelessWidget {
                             break;
                         }
                       }),
-                  ClickableText(
-                      text: 'متابعة طلبات الموظفين',
-                      onTap: () => Get.to(Dissents())),
+                  CustomPopupMenuButton(
+                      buttonText: "متابعة طلبات الموظفين",
+                      items: const [
+                        PopupMenuItem(
+                          child: Text('متابعة طلبات الموظفين'),
+                          value: AppRoutes.leaveRequestsTracking,
+                        ),
+                        PopupMenuItem(
+                          child: Text('ترحيل رصيد الاجازات'),
+                          value: AppRoutes.transferringLeaveBalance,
+                        ),
+                      ],
+                      onSelected: (page) {
+                        switch (page) {
+                          case AppRoutes.leaveRequestsTracking:
+                            Get.toNamed(AppRoutes.leaveRequestsTracking);
+                            break;
+                          case AppRoutes.transferringLeaveBalance:
+                            Get.toNamed(AppRoutes.transferringLeaveBalance);
+                            break;
+                        }
+                      }),
                   ClickableText(
                     text: 'التقارير و الطباعة',
                     onTap: () => Get.to(
