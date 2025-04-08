@@ -1,10 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
 
 class HijriPicker {
   final TextEditingController pickedDate;
+  final TextEditingController? pickedGregorianDate;
+
   HijriCalendar hijriDate = HijriCalendar.now();
-  HijriPicker(this.pickedDate);
+
+  HijriPicker(this.pickedDate, [this.pickedGregorianDate]);
 
   String _formatHijriDate(HijriCalendar date) {
     return "${date.hDay} / ${date.hMonth} / ${date.hYear} هـ";
@@ -87,7 +92,7 @@ class HijriPicker {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 30,
+                itemCount: 30, // Adjust this based on the month
                 itemBuilder: (context, index) {
                   final day = index + 1;
                   return ListTile(
@@ -98,7 +103,20 @@ class HijriPicker {
                         ..hMonth = month
                         ..hDay = day;
 
-                      pickedDate.text = _formatHijriDate(hijriDate);
+                      final gregorianDate =
+                          hijriDate.hijriToGregorian(year, month, day);
+
+                      final formattedHijri = _formatHijriDate(hijriDate);
+                      final formattedGregorian =
+                          "${gregorianDate.day}/${gregorianDate.month}/${gregorianDate.year} م";
+
+                      pickedDate.text = formattedHijri;
+
+                      if (pickedGregorianDate != null) {
+                        pickedGregorianDate!.text = formattedGregorian;
+                      }
+
+                      // Close all bottom sheets
                       Navigator.of(context).popUntil((route) => route.isFirst);
                     },
                   );

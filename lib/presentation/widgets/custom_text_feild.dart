@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String label;
+  final String? label;
   final String? hint;
   final double customHeight;
   final bool obscureText;
@@ -13,10 +13,10 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final Function()? onTap;
   final bool enabled;
-
+  final double? padding;
   const CustomTextField({
     Key? key,
-    required this.label,
+    this.label,
     this.obscureText = false,
     this.prefixIcon,
     this.controller, // Ensure controllers is passed
@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.onTap,
     this.enabled = true,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -38,16 +39,14 @@ class CustomTextField extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              label,
+              label!,
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          Container(
-            constraints:
-                BoxConstraints(maxHeight: customHeight, maxWidth: customWidth),
+          SizedBox(
             width: customWidth,
             height: customHeight,
             child: TextField(

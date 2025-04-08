@@ -42,28 +42,51 @@ class BaseScreen extends StatelessWidget {
                       buttonText: 'الموظفين و العاملين',
                       items: const [
                         PopupMenuItem(
-                          value: AppRoutes.tafweed,
+                          value: AppRoutes.employeesTafweed,
                           child: Text("تفويض"),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.kharijD,
+                          value: AppRoutes.employeesKharijD,
                           child: Text("خارج الدوام"),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.iqrar,
+                          value: AppRoutes.employeesIqrar,
                           child: Text("إقرار"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesDissents,
+                          child: Text("المخالفات"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesEmployeeCycle,
+                          child: Text("دورة موظف"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesMedicalExaminationRequest,
+                          child: Text("طلب كشف طبي"),
                         )
                       ],
                       onSelected: (page) {
                         switch (page) {
-                          case AppRoutes.tafweed:
-                            Get.toNamed(AppRoutes.tafweed);
+                          case AppRoutes.employeesTafweed:
+                            Get.toNamed(AppRoutes.employeesTafweed);
                             break;
-                          case AppRoutes.kharijD:
-                            Get.toNamed(AppRoutes.kharijD);
+                          case AppRoutes.employeesKharijD:
+                            Get.toNamed(AppRoutes.employeesKharijD);
                             break;
-                          case AppRoutes.iqrar:
-                            Get.toNamed(AppRoutes.iqrar);
+                          case AppRoutes.employeesIqrar:
+                            Get.toNamed(AppRoutes.employeesIqrar);
+                            break;
+                          case AppRoutes.employeesDissents:
+                            Get.toNamed(AppRoutes.employeesDissents);
+                            break;
+                          case AppRoutes.employeesEmployeeCycle:
+                            Get.toNamed(AppRoutes.employeesEmployeeCycle);
+                            break;
+                          case AppRoutes.employeesMedicalExaminationRequest:
+                            Get.toNamed(
+                                AppRoutes.employeesMedicalExaminationRequest);
+                            break;
                         }
                       }),
 
