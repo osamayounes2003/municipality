@@ -64,6 +64,18 @@ class BaseScreen extends StatelessWidget {
                         PopupMenuItem(
                           value: AppRoutes.employeesMedicalExaminationRequest,
                           child: Text("طلب كشف طبي"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesHasem,
+                          child: Text("بيانات الحسم"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesMobasharahDecision,
+                          child: Text("قرار مباشرة"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesIntedab,
+                          child: Text("بيانات الانتداب"),
                         )
                       ],
                       onSelected: (page) {
@@ -86,6 +98,15 @@ class BaseScreen extends StatelessWidget {
                           case AppRoutes.employeesMedicalExaminationRequest:
                             Get.toNamed(
                                 AppRoutes.employeesMedicalExaminationRequest);
+                            break;
+                          case AppRoutes.employeesHasem:
+                            Get.toNamed(AppRoutes.employeesHasem);
+                            break;
+                          case AppRoutes.employeesMobasharahDecision:
+                            Get.toNamed(AppRoutes.employeesMobasharahDecision);
+                            break;
+                          case AppRoutes.employeesIntedab:
+                            Get.toNamed(AppRoutes.employeesIntedab);
                             break;
                         }
                       }),

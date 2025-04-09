@@ -6,6 +6,7 @@ import 'package:municipality/presentation/screens/base_screen.dart';
 import 'package:municipality/presentation/screens/track_requests_of_employees/leave_requests/presentation/controllers/leave_requests_controller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
 import 'package:municipality/presentation/screens/track_requests_of_employees/leave_requests/presentation/widgets/custom_ratio_button.dart';
+import 'package:municipality/presentation/widgets/custom_radio_list_tile.dart';
 import 'package:municipality/presentation/widgets/custom_text_feild.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
@@ -44,26 +45,37 @@ class LeaveRequestsTracking extends StatelessWidget {
                       label: 'نوع البوابة',
                       customHeight: 35,
                       customWidth: 200),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomRadioButton(
-                        value: 'الكل',
-                        label: "الكل",
-                      ),
-                      CustomRadioButton(
-                        value: 'نعم اعتماد و حفظ الاجازة',
-                        label: 'نعم اعتماد و حفظ الاجازة',
-                      ),
-                      CustomRadioButton(
+                  Obx(
+                    () => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomRadioListTile(
+                          value: 'الكل',
+                          title: 'الكل',
+                          groupValue: controller.selectedRatioButton.value,
+                          onChanged: (value) {
+                            controller.updateOrderTypeValue(value);
+                          },
+                        ),
+                        CustomRadioListTile(
                           value: 'جاري مراجعة الطلب',
-                          label: 'جاري مراجعة الطلب'),
-                      CustomRadioButton(
-                        value: 'تم رفض الطلب',
-                        label: 'تم رفض الطلب',
-                      ),
-                    ],
-                  ).paddingAll(20)
+                          title: 'جاري مراجعة الطلب',
+                          groupValue: controller.selectedRatioButton.value,
+                          onChanged: (value) {
+                            controller.updateOrderTypeValue(value);
+                          },
+                        ),
+                        CustomRadioListTile(
+                          value: 'تم رفض الطلب',
+                          title: 'تم رفض الطلب',
+                          groupValue: controller.selectedRatioButton.value,
+                          onChanged: (value) {
+                            controller.updateOrderTypeValue(value);
+                          },
+                        ),
+                      ],
+                    ).paddingAll(20),
+                  )
                 ],
               ).scrollDirection(Axis.horizontal).paddingAll(15),
               Obx(

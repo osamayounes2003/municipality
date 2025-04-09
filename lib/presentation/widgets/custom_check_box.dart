@@ -20,7 +20,10 @@ class CustomCheckbox extends StatelessWidget {
           value: value,
           onChanged: onChanged,
         ),
-        Text(label),
+        Text(
+          label,
+          style: TextStyle(fontSize: 12),
+        ),
       ],
     );
   }

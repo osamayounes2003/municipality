@@ -1,6 +1,9 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_hasem/presentation/pages/employees_hasem.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_iqrar/presentation/controllers/iqrar_controller.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_itedab/presentation/pages/employees_itedab.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_kharij_dawam/presentation/pages/kharij_dawam.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_mobasharah_decision/presentation/pages/employees_mobasharah_decision.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_tafweed/presentation/pages/tafweed.dart';
 import 'package:municipality/presentation/screens/search/dawrat/presentation/pages/dawrat_search.dart';
 import 'package:municipality/presentation/screens/search/employees/presentation/pages/employees.dart';
@@ -34,7 +37,7 @@ import '../../presentation/screens/wait_all/beanat_wazaef_asasea.dart';
 class AppRoutes {
   static const String baladiaInfo = '/';
   static const String nations = '/nations';
-  static const String dissents = '/employees_dissents';
+  static const String dissents = '/employee_dissents';
   static const String jobs = '/jobs';
   static const String badalCountries = '/badal_countries';
   static const String badal = '/badal';
@@ -51,7 +54,10 @@ class AppRoutes {
   static const String employeesEmployeeCycle = '/employees_employees_dissents';
   static const String employeesMedicalExaminationRequest =
       '/employees_examination_request';
-
+  static const String employeesHasem = '/employees_hasem';
+  static const String employeesMobasharahDecision =
+      '/employees_mobasharah_decision';
+  static const String employeesIntedab = '/employees_intedab';
   //search
   static const String employeeSearch = '/employee_search';
   static const String intedabSearch = '/intedab_search';
@@ -189,6 +195,18 @@ class AppRoutes {
         page: () => const EmployeesCycle()),
     GetPage(
         name: AppRoutes.employeesMedicalExaminationRequest,
-        page: () => const EmployeesMedicalExaminationRequest())
+        page: () => const EmployeesMedicalExaminationRequest()),
+    GetPage(
+      name: AppRoutes.employeesHasem,
+      page: () => const EmployeesHasem(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesMobasharahDecision,
+      page: () => const EmployeesMobasharahDecision(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesIntedab,
+      page: () => const EmployeesItedab(),
+    ),
   ];
 }

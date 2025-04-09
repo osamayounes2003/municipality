@@ -6,6 +6,7 @@ import 'package:municipality/presentation/screens/base_screen.dart';
 import 'package:municipality/presentation/screens/search/iqrar/presentation/controllers/iqrar_search_controller.dart';
 import 'package:municipality/presentation/widgets/custom_button.dart';
 import 'package:municipality/presentation/widgets/custom_check_box.dart';
+import 'package:municipality/presentation/widgets/custom_dropdown_button.dart';
 import 'package:municipality/presentation/widgets/custom_text_feild.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
@@ -34,12 +35,13 @@ class EmployeesDissents extends StatelessWidget {
               customHeight: 25,
               customWidth: currentWidth * 0.5,
             ),
-            CustomTextField(
-              controller: controller.moslsal,
-              label: 'نوع المخالفة',
-              customHeight: 25,
-              customWidth: currentWidth * 0.5,
-            ),
+            CustomDropdownButton(
+                label: "نوع المخالفة",
+                list: controller.dissentTypes,
+                item: controller.dissentType,
+                onChanged: (value) {
+                  controller.onChangedDissentType(controller.dissentType.value);
+                }),
             CustomTextField(
               controller: controller.dissentReport,
               label: 'بيان المخالفة',

@@ -8,6 +8,10 @@ class EmployeesDissentController extends GetxController {
   late final TextEditingController dissentReport = TextEditingController();
   RxString dissentType = 'لفت نظر'.obs;
   final List<String> dissentTypes = ["لفت نظر"];
+  onChangedDissentType(value) {
+    dissentType(value);
+  }
+
   var isPicture = false.obs;
   onChangedPicture() {
     isPicture.value = !isPicture.value;

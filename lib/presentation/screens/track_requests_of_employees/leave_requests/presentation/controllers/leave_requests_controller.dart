@@ -14,11 +14,9 @@ class LeaveRequestsController extends GetxController {
   var selectedGateType = ''.obs;
   var isCredentials = false.obs;
   var rejectionData = false.obs;
-  var selectedRatioButton = 1.obs;
-  String _orderType = 'الكل';
-  String get orderType => _orderType;
-  void setOrderType(String type) {
-    _orderType = type;
-    update();
+  var selectedRatioButton = "".obs;
+  var _orderType = ''.obs;
+  updateOrderTypeValue(value) {
+    selectedRatioButton.value = value;
   }
 }
