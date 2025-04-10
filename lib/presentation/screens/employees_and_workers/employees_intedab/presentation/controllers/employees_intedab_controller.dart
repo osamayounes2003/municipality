@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class EmployeesItedabController extends GetxController {
+class EmployeesIntedabController extends GetxController {
   late final TextEditingController mosalsal = TextEditingController();
   late final TextEditingController decisionNumber = TextEditingController();
   late final TextEditingController intedabAuthority = TextEditingController();
@@ -28,10 +28,33 @@ class EmployeesItedabController extends GetxController {
   RxString category = 'أ'.obs;
   RxString howToTravel = 'الطائرة'.obs;
   var isPicture = false.obs;
-  var selectedCheckBoxValue = false.obs;
+  var housingOrFood = false.obs;
+  var travelVehicleTameen = false.obs;
+  var usingCar = false.obs;
+  var workOutDawam = false.obs;
+  var solfahNaqdeah = false.obs;
+  void toggleCheckBoxValue(var variable) {
+    variable.value = !variable.value;
+  }
 
-  onChangesCheckBoxValue() {
-    selectedCheckBoxValue.value = !selectedCheckBoxValue.value;
+  onChangeHousingOrFood() {
+    toggleCheckBoxValue(housingOrFood);
+  }
+
+  onChangerTavelVehicleTameen() {
+    toggleCheckBoxValue(travelVehicleTameen);
+  }
+
+  onChangeUsingCar() {
+    toggleCheckBoxValue(usingCar);
+  }
+
+  onChangeWorkOutDawam() {
+    toggleCheckBoxValue(workOutDawam);
+  }
+
+  onChangeSolfahNaqdeah() {
+    toggleCheckBoxValue(solfahNaqdeah);
   }
 
   var mablaghTaweedy = ''.obs;

@@ -8,9 +8,13 @@ class CustomDropdownButton extends StatelessWidget {
     required this.list,
     required this.item,
     required this.onChanged,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   final String label;
+  final double? width;
+  final double? height;
   final List<String> list;
   final RxString item;
   final ValueChanged<String?> onChanged;
@@ -29,8 +33,8 @@ class CustomDropdownButton extends StatelessWidget {
         ).paddingAll(5),
         Obx(
           () => Container(
-            width: 200,
-            height: 35,
+            width: width == null ? 200 : width,
+            height: height == null ? 35 : height,
             decoration: BoxDecoration(
               // color: Colors.grey,
               borderRadius: BorderRadius.circular(4),

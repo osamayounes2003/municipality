@@ -76,6 +76,26 @@ class BaseScreen extends StatelessWidget {
                         PopupMenuItem(
                           value: AppRoutes.employeesIntedab,
                           child: Text("بيانات الانتداب"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesIgazatData,
+                          child: Text("بيانات الإجازات"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesTarkeahEmployee,
+                          child: Text("ترقية موظف"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesInhaaKhidmah,
+                          child: Text("إنهاء خدمة"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesTaeenAndMobasharah,
+                          child: Text("تعيين و مباشرة"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesBeanatWazefahAsaseah,
+                          child: Text("بيانات الوظائف الأساسية"),
                         )
                       ],
                       onSelected: (page) {
@@ -107,6 +127,22 @@ class BaseScreen extends StatelessWidget {
                             break;
                           case AppRoutes.employeesIntedab:
                             Get.toNamed(AppRoutes.employeesIntedab);
+                            break;
+                          case AppRoutes.employeesIgazatData:
+                            Get.toNamed(AppRoutes.employeesIgazatData);
+                            break;
+                          case AppRoutes.employeesTarkeahEmployee:
+                            Get.toNamed(AppRoutes.employeesTarkeahEmployee);
+                            break;
+                          case AppRoutes.employeesInhaaKhidmah:
+                            Get.toNamed(AppRoutes.employeesInhaaKhidmah);
+                            break;
+                          case AppRoutes.employeesTaeenAndMobasharah:
+                            Get.toNamed(AppRoutes.employeesTaeenAndMobasharah);
+                            break;
+                          case AppRoutes.employeesBeanatWazefahAsaseah:
+                            Get.toNamed(
+                                AppRoutes.employeesBeanatWazefahAsaseah);
                             break;
                         }
                       }),

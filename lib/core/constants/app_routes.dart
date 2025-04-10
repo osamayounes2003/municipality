@@ -1,10 +1,12 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_hasem/presentation/pages/employees_hasem.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_igazat_data/presentation/pages/employees_igazat_data.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_inhaa_khidmah/presentation/pages/employees_inhaa_khidmah.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_iqrar/presentation/controllers/iqrar_controller.dart';
-import 'package:municipality/presentation/screens/employees_and_workers/employees_itedab/presentation/pages/employees_itedab.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_kharij_dawam/presentation/pages/kharij_dawam.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_mobasharah_decision/presentation/pages/employees_mobasharah_decision.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_tafweed/presentation/pages/tafweed.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_tarkeah_employee/presentation/pages/epmployees_tarkeah_employee.dart';
 import 'package:municipality/presentation/screens/search/dawrat/presentation/pages/dawrat_search.dart';
 import 'package:municipality/presentation/screens/search/employees/presentation/pages/employees.dart';
 import 'package:municipality/presentation/screens/search/end_service/presentation/pages/end_service_search.dart';
@@ -23,10 +25,13 @@ import 'package:municipality/presentation/screens/tarmeez/jobs/jobs.dart';
 import 'package:municipality/presentation/screens/tarmeez/nations/nations.dart';
 import 'package:municipality/presentation/screens/tarmeez/parts/parts.dart';
 import 'package:municipality/presentation/screens/track_requests_of_employees/leave_requests/presentation/pages/leave_requests.dart';
-import '../../presentation/screens/employees_and_workers/employee_cycle/presentation/pages/employees_employee_cycle.dart';
+import '../../presentation/screens/employees_and_workers/employee_beanat_wazaef_asasea/presentation/pages/employee_beanat_wazaef_asasea.dart';
+import '../../presentation/screens/employees_and_workers/employees_cycle_employee/presentation/pages/employees_employee_cycle.dart';
 import '../../presentation/screens/employees_and_workers/employees_dissents/presentation/pages/employees_dissents.dart';
+import '../../presentation/screens/employees_and_workers/employees_intedab/presentation/pages/employees_intedab.dart';
 import '../../presentation/screens/employees_and_workers/employees_iqrar/presentation/pages/iqrar.dart';
 import '../../presentation/screens/employees_and_workers/employees_medical_examination_request/presentation/pages/medical_examination_request.dart';
+import '../../presentation/screens/employees_and_workers/employees_taeen_and_mobasharah/presentation/pages/employees_taeen_and_mobasharah.dart';
 import '../../presentation/screens/search/dissents/presentation/pages/dissents_search.dart';
 import '../../presentation/screens/search/promotion/presentation/pages/promotion_search.dart';
 import '../../presentation/screens/search/qarar_mobasharah/presentation/pages/qarar_mobasharah_search.dart';
@@ -58,6 +63,13 @@ class AppRoutes {
   static const String employeesMobasharahDecision =
       '/employees_mobasharah_decision';
   static const String employeesIntedab = '/employees_intedab';
+  static const String employeesIgazatData = '/employees_igazat_data';
+  static const String employeesTarkeahEmployee = '/employees_tarkeah_employee';
+  static const String employeesInhaaKhidmah = '/employees_inhaa_khidmah';
+  static const String employeesTaeenAndMobasharah =
+      '/employees_taeen_and_mobasharah';
+  static const String employeesBeanatWazefahAsaseah =
+      '/employees_beanat_wazefah_asaseah';
   //search
   static const String employeeSearch = '/employee_search';
   static const String intedabSearch = '/intedab_search';
@@ -192,7 +204,7 @@ class AppRoutes {
         page: () => const EmployeesDissents()),
     GetPage(
         name: AppRoutes.employeesEmployeeCycle,
-        page: () => const EmployeesCycle()),
+        page: () => const EmployeesCycleEmployee()),
     GetPage(
         name: AppRoutes.employeesMedicalExaminationRequest,
         page: () => const EmployeesMedicalExaminationRequest()),
@@ -206,7 +218,27 @@ class AppRoutes {
     ),
     GetPage(
       name: AppRoutes.employeesIntedab,
-      page: () => const EmployeesItedab(),
+      page: () => const EmployeesIntedab(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesIgazatData,
+      page: () => const EmployeesIgazatData(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesTarkeahEmployee,
+      page: () => const EmployeesTarkeahEmployee(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesInhaaKhidmah,
+      page: () => const EmployeesInhaaKhidmah(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesTaeenAndMobasharah,
+      page: () => const EmployeesTaeenAndMobasharah(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesBeanatWazefahAsaseah,
+      page: () => const EmployeeBeanatWazaefAsasea(),
     ),
   ];
 }

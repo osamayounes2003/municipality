@@ -11,8 +11,8 @@ import 'package:pluto_grid/pluto_grid.dart';
 
 import '../controllers/employees_employee_cycle_controller.dart';
 
-class EmployeesCycle extends StatelessWidget {
-  const EmployeesCycle({super.key});
+class EmployeesCycleEmployee extends StatelessWidget {
+  const EmployeesCycleEmployee({super.key});
 
   @override
   Widget build(BuildContext context) {

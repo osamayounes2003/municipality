@@ -11,14 +11,15 @@ import 'package:municipality/presentation/widgets/custom_radio_list_tile.dart';
 import 'package:municipality/presentation/widgets/custom_text_feild.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
-import '../controllers/employees_itedab_controller.dart';
+import '../controllers/employees_intedab_controller.dart';
 
-class EmployeesItedab extends StatelessWidget {
-  const EmployeesItedab({super.key});
+class EmployeesIntedab extends StatelessWidget {
+  const EmployeesIntedab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    EmployeesItedabController controller = Get.put(EmployeesItedabController());
+    EmployeesIntedabController controller =
+        Get.put(EmployeesIntedabController());
     double currentWidth = Get.width;
     double currentHeight = Get.height;
 
@@ -241,39 +242,39 @@ class EmployeesItedab extends StatelessWidget {
                       children: [
                         CustomCheckbox(
                           label: 'هل تم تأمين وسيلة السفر',
-                          value: controller.selectedCheckBoxValue.value,
+                          value: controller.travelVehicleTameen.value,
                           onChanged: (value) {
-                            controller.onChangesCheckBoxValue();
+                            controller.onChangerTavelVehicleTameen();
                           },
                         ),
                         CustomCheckbox(
                           label:
                               'هل استعملت سيارة حكومية من الجهة المنتدب منها أو الجهة المنتدب إليها للتنقلات الداخلية',
-                          value: controller.selectedCheckBoxValue.value,
+                          value: controller.usingCar.value,
                           onChanged: (value) {
-                            controller.onChangesCheckBoxValue();
+                            controller.onChangeUsingCar();
                           },
                         ),
                         CustomCheckbox(
                           label: 'هل تم تكليفك بالعمل خارج فترة الدوام',
-                          value: controller.selectedCheckBoxValue.value,
+                          value: controller.workOutDawam.value,
                           onChanged: (value) {
-                            controller.onChangesCheckBoxValue();
+                            controller.onChangeWorkOutDawam();
                           },
                         ),
                         CustomCheckbox(
                           label: 'هل تم تأمين السكن أو الطعام أو أحدهما',
-                          value: controller.selectedCheckBoxValue.value,
+                          value: controller.housingOrFood.value,
                           onChanged: (value) {
-                            controller.onChangesCheckBoxValue();
+                            controller.onChangeHousingOrFood();
                           },
                         ),
                         CustomCheckbox(
                           label:
                               'هل سبق أن صرف سلفة نقدية على حساب المصاريف السفرية و ما مقدارها',
-                          value: controller.selectedCheckBoxValue.value,
+                          value: controller.solfahNaqdeah.value,
                           onChanged: (value) {
-                            controller.onChangesCheckBoxValue();
+                            controller.onChangeSolfahNaqdeah();
                           },
                         )
                       ],
@@ -312,14 +313,15 @@ class EmployeesItedab extends StatelessWidget {
                             title:
                                 'يصرف للمذكور مبلغًا تعويضًا عن تذاكر إركابه'),
                         CustomRadioListTile(
-                            groupValue: controller.mablaghTaweedy,
-                            value:
-                                ' لا يصرف للمذكور مبلغًا تعويضًا عن تذاكر إركابه',
-                            title:
-                                ' لا يصرف للمذكور مبلغًا تعويضًا عن تذاكر إركابه',
-                            onChanged: (value) {
-                              controller.updateMablaghTaweedy(value);
-                            }),
+                          groupValue: controller.mablaghTaweedy,
+                          value:
+                              ' لا يصرف للمذكور مبلغًا تعويضًا عن تذاكر إركابه',
+                          title:
+                              ' لا يصرف للمذكور مبلغًا تعويضًا عن تذاكر إركابه',
+                          onChanged: (value) {
+                            controller.updateMablaghTaweedy(value);
+                          },
+                        ),
                       ],
                     ),
                   )
