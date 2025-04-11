@@ -5,6 +5,7 @@ import 'package:municipality/presentation/screens/employees_and_workers/employee
 import 'package:municipality/presentation/screens/employees_and_workers/employees_iqrar/presentation/controllers/iqrar_controller.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_kharij_dawam/presentation/pages/kharij_dawam.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_mobasharah_decision/presentation/pages/employees_mobasharah_decision.dart';
+import 'package:municipality/presentation/screens/employees_and_workers/employees_passport/presentation/pages/employees_passport.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_tafweed/presentation/pages/tafweed.dart';
 import 'package:municipality/presentation/screens/employees_and_workers/employees_tarkeah_employee/presentation/pages/epmployees_tarkeah_employee.dart';
 import 'package:municipality/presentation/screens/search/dawrat/presentation/pages/dawrat_search.dart';
@@ -63,6 +64,7 @@ class AppRoutes {
   static const String employeesMobasharahDecision =
       '/employees_mobasharah_decision';
   static const String employeesIntedab = '/employees_intedab';
+  static const String employeesPassport = '/employees_passport';
   static const String employeesIgazatData = '/employees_igazat_data';
   static const String employeesTarkeahEmployee = '/employees_tarkeah_employee';
   static const String employeesInhaaKhidmah = '/employees_inhaa_khidmah';
@@ -239,6 +241,10 @@ class AppRoutes {
     GetPage(
       name: AppRoutes.employeesBeanatWazefahAsaseah,
       page: () => const EmployeeBeanatWazaefAsasea(),
+    ),
+    GetPage(
+      name: AppRoutes.employeesPassport,
+      page: () => const EmployeesPassport(),
     ),
   ];
 }

@@ -36,50 +36,48 @@ class BaseScreen extends StatelessWidget {
                     text: 'التجهيز و الإعداد',
                     onTap: () {},
                   ),
-
-                  // Add spacing between items
                   CustomPopupMenuButton(
                       buttonText: 'الموظفين و العاملين',
                       items: const [
                         PopupMenuItem(
-                          value: AppRoutes.employeesTafweed,
-                          child: Text("تفويض"),
+                          value: AppRoutes.employeesBeanatWazefahAsaseah,
+                          child: Text("بيانات الوظائف الأساسية"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesIntedab,
+                          child: Text("بيانات الإنتداب"),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.employeesKharijD,
-                          child: Text("خارج الدوام"),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.employeesIqrar,
-                          child: Text("إقرار"),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.employeesDissents,
-                          child: Text("المخالفات"),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.employeesEmployeeCycle,
-                          child: Text("دورة موظف"),
-                        ),
-                        PopupMenuItem(
-                          value: AppRoutes.employeesMedicalExaminationRequest,
-                          child: Text("طلب كشف طبي"),
+                          child: Text(" بيانات خارج الدوام"),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.employeesHasem,
-                          child: Text("بيانات الحسم"),
+                          child: Text("بيانات الحسميات"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesDissents,
+                          child: Text("بيانات المخالفات"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesIgazatData,
+                          child: Text("بيانات الإجازات"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesEmployeeCycle,
+                          child: Text("بيانات دورة موظف"),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.employeesMobasharahDecision,
                           child: Text("قرار مباشرة"),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.employeesIntedab,
-                          child: Text("بيانات الانتداب"),
+                          value: AppRoutes.employeesIqrar,
+                          child: Text(" إقرار موظف"),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.employeesIgazatData,
-                          child: Text("بيانات الإجازات"),
+                          value: AppRoutes.employeesMedicalExaminationRequest,
+                          child: Text("طلب كشف طبي"),
                         ),
                         PopupMenuItem(
                           value: AppRoutes.employeesTarkeahEmployee,
@@ -91,12 +89,16 @@ class BaseScreen extends StatelessWidget {
                         ),
                         PopupMenuItem(
                           value: AppRoutes.employeesTaeenAndMobasharah,
-                          child: Text("تعيين و مباشرة"),
+                          child: Text("قرار تعيين"),
                         ),
                         PopupMenuItem(
-                          value: AppRoutes.employeesBeanatWazefahAsaseah,
-                          child: Text("بيانات الوظائف الأساسية"),
-                        )
+                          value: AppRoutes.employeesPassport,
+                          child: Text("إقرار استلام جواز سفر"),
+                        ),
+                        PopupMenuItem(
+                          value: AppRoutes.employeesTafweed,
+                          child: Text("تفويض"),
+                        ),
                       ],
                       onSelected: (page) {
                         switch (page) {
@@ -140,13 +142,15 @@ class BaseScreen extends StatelessWidget {
                           case AppRoutes.employeesTaeenAndMobasharah:
                             Get.toNamed(AppRoutes.employeesTaeenAndMobasharah);
                             break;
+                          case AppRoutes.employeesPassport:
+                            Get.toNamed(AppRoutes.employeesPassport);
+                            break;
                           case AppRoutes.employeesBeanatWazefahAsaseah:
                             Get.toNamed(
                                 AppRoutes.employeesBeanatWazefahAsaseah);
                             break;
                         }
                       }),
-
                   CustomPopupMenuButton(
                       buttonText: 'الترميز',
                       items: const [

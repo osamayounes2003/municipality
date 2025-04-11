@@ -116,8 +116,9 @@ class HijriPicker {
                         pickedGregorianDate!.text = formattedGregorian;
                       }
 
-                      // Close all bottom sheets
-                      Navigator.of(context).popUntil((route) => route.isFirst);
+                      Get.back();
+                      Get.back();
+                      Get.back();
                     },
                   );
                 },
